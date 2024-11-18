@@ -8,8 +8,8 @@ export default function Home() {
               className={styles.logo}
               src='/snowBg.png'
               alt='Next.js Logo'
-              width={500}
-              height={500}
+              width={375}
+              height={375}
               priority
           />
 
