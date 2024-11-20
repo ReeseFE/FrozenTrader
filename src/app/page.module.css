@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
@@ -17,12 +17,30 @@
   width: var(--max-width);
 }
 
-.logo {
+.logoBg {
+  width: 500px;
+  height: 500px;
   position: absolute;
+  top: 0;
   opacity: 0.2;
+  animation: breathe 5s infinite  ease-in-out; /* 调整3s以改变呼吸频率 */
 }
 
+@keyframes breathe {
+    0% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.1;
+    }
+}
+
+
 .card {
+  text-align: center;
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
