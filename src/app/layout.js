@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'FrozenTrader',
-  description: '', // 在这写你的网站简介，它不会被直接展示，但是会影响到搜索引擎爬虫排序，和搜索的结果里可能会展示
+  description:
+    'A privacy-focused, easy-to-use quantitative research and trading platform. Medium to low frequency trading. Event-driven backtests on any historical data. Live trading with no code changes.', // 在这写你的网站简介，它不会被直接展示，但是会影响到搜索引擎爬虫排序，和搜索的结果里可能会展示
 };
 
 export default function RootLayout({ children }) {
