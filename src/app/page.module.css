@@ -3,12 +3,11 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 6rem;
+  padding: 5rem 15rem;
   min-height: 100vh;
   width: 100%;
-  background: rgb(27, 27, 29)
+  background: rgb(27, 27, 29);
 }
-
 
 .grid {
   display: grid;
@@ -16,108 +15,30 @@
   max-width: 100%;
   width: var(--max-width);
 }
-
-.logoBg {
-  width: 500px;
-  height: 500px;
-  position: absolute;
-  top: 0;
-  opacity: 0.2;
-  animation: breathe 5s infinite  ease-in-out; /* 调整3s以改变呼吸频率 */
-}
-
-@keyframes breathe {
-    0% {
-        opacity: 0.1;
-    }
-    50% {
-        opacity: 0.2;
-    }
-    100% {
-        opacity: 0.1;
-    }
-}
-
-
-.card {
+.title {
+  font-size: 3.7rem;
+  font-weight: 500;
   text-align: center;
-  padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
 }
 
-.card span {
-  display: inline-block;
-  transition: transform 200ms;
+.desc {
+  margin-top: 2.5rem;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
-.card h2 {
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-}
-
-.card p {
-  margin: 0;
-  opacity: 0.6;
-  font-size: 0.9rem;
+.btn {
+  width: 10rem;
+  height: 3rem;
+  font-size: 1.1rem;
   line-height: 1.5;
-  max-width: 30ch;
-  text-wrap: balance;
-}
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-  }
-
-  .card:hover span {
-    transform: translateX(4px);
-  }
-}
-
-@media (prefers-reduced-motion) {
-  .card:hover span {
-    transform: none;
-  }
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-  .content {
-    padding: 4rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
-    text-align: center;
-  }
-
-  .card {
-    padding: 1rem 2.5rem;
-  }
-
-  .card h2 {
-    margin-bottom: 0.5rem;
-  }
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+  letter-spacing: 0.00938em;
+  font-weight: 600;
+  color: #eeeeee;
+  background: -webkit-linear-gradient(
+    315deg,
+    rgb(135, 206, 235) 15%,
+    rgb(100, 126, 255)
+  );
+  border-radius: 3rem;
 }

@@ -7,25 +7,15 @@ export default function Home() {
     <>
       <Navbar />
       <main className={styles.main}>
-        <Image
-          className={styles.logoBg}
-          src='/snowBg.png'
-          alt='Next.js Logo'
-          width={375}
-          height={375}
-          priority
-        />
-        <h1>
+        <p className={styles.title}>
           A privacy-focused, easy-to-use quantitative research and trading
           platform
-        </h1>
-        <p>
+        </p>
+        <p className={styles.desc}>
           Medium to low frequency trading. Event-driven backtests on any
           historical data. Live trading with no code changes.
         </p>
-        <button>
-          Get Started
-        </button>
+        <button className={styles.btn}>Get Started</button>
       </main>
     </>
   );
