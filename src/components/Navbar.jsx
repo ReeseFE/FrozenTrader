@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { AppBar, Toolbar, Button, Menu,MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Button, Menu, MenuItem } from '@mui/material';
 import { styled } from '@mui/system';
 import { useState } from 'react';
 
@@ -32,7 +32,13 @@ const Navbar = () => {
 
   return (
     <BarContainer>
-      <Toolbar style={{ paddingLeft: '100px', display: 'flex', justifyContent: 'space-between'  }}>
+      <Toolbar
+        style={{
+          paddingLeft: '100px',
+          display: 'flex',
+          justifyContent: 'space-between',
+        }}
+      >
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <a href='/'>
             <Image
@@ -62,7 +68,7 @@ const Navbar = () => {
             <div key={index}>
               <Button
                 aria-controls={`menu-${index}`}
-                aria-haspopup="true"
+                aria-haspopup='true'
                 onClick={(event) => handleMenuClick(event, index)}
                 style={{ color: 'grey', margin: '0 10px' }}
               >

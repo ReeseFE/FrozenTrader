@@ -15,7 +15,7 @@ const MonacoEditor = ({ value, language, onChange }) => {
 
             editorRef.current.onDidChangeModelContent(() => {
                 const newValue = editorRef.current.getValue();
-                // onChange(newValue);
+                onChange(newValue);
             });
         }
 
@@ -26,7 +26,7 @@ const MonacoEditor = ({ value, language, onChange }) => {
         };
     }, [containerRef]);
 
-    return <div ref={containerRef} style={{ height: '100vh', width: '50%' }} />;
+    return <div ref={containerRef} style={{ height: '100vh', width: '100%' }} />;
 };
 
 export default MonacoEditor;

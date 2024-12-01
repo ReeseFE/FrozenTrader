@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Link from 'next/link';
 import styles from './page.module.css';
 import Navbar from '@/components/Navbar.jsx';
 
@@ -11,10 +11,12 @@ export default function Home() {
           A privacy-focused, easy-to-use quantitative research platform
         </p>
         <p className={styles.desc}>
-          Trade any equity assets in one platform. Event-driven backtests 
-          on any historical data. Live trading with no code changes.
+          Trade any equity assets in one platform. Event-driven backtests on any
+          historical data. Live trading with no code changes.
         </p>
-        <button className={styles.btn}>Get Started</button>
+        <Link href='/playground'>
+          <button className={styles.btn}>Get Started</button>
+        </Link>
       </main>
     </>
   );
