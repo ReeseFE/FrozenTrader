@@ -7,6 +7,10 @@
   min-height: 100vh;
   width: 100%;
   background: rgb(27, 27, 29);
+  background-image: url('/background.png'); /* 添加背景图像 */
+  background-size: 200% 300%; /* 使背景图像覆盖整个区域 */
+  background-position: center; /* 将背景图像居中 */
+  background-repeat: no-repeat; /* 不重复背景图像 */
 }
 
 .grid {
@@ -16,6 +20,7 @@
   width: var(--max-width);
 }
 .title {
+  margin-top: 4.5rem;
   font-size: 3.7rem;
   font-weight: 500;
   text-align: center;
@@ -23,9 +28,11 @@
 
 .desc {
   width: 85%;
-  margin-top: 2.5rem;
+  margin-top: -3.5rem;
   font-size: 1.1rem;
   text-align: center;
+  opacity: 0.8;
+  line-height: 1.5;
 }
 
 .btn {
