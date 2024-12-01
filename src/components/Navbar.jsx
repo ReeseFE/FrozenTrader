@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { AppBar, Toolbar, Button, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Button, Menu, MenuItem, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import { useState } from 'react';
 
@@ -9,8 +9,14 @@ const BarContainer = styled(AppBar)`
   box-shadow: none;
 `;
 
+const CustomMenuItem = styled(MenuItem)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEls, setAnchorEls] = useState({});
   const [menuIndex, setMenuIndex] = useState(null);
 
   const handleMenuClick = (event, index) => {
@@ -18,17 +24,36 @@ const Navbar = () => {
     setMenuIndex(index);
   };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    setMenuIndex(null);
+  const handleMenuOpen = (event, menu) => {
+    setAnchorEls((prev) => ({ ...prev, [menu]: event.currentTarget }));
   };
 
-  const menuItems = [
-    { label: 'Solutions', items: ['Solution 1', 'Solution 2', 'Solution 3'] },
-    { label: 'Resources', items: ['Demo', 'Docs', 'Resource 3'] },
-    { label: 'About Frozen', items: ['Our Story', 'Team', 'Careers'] },
-    { label: 'Get Started', items: ['Sign Up', 'Pricing', 'Demo'] },
-  ];
+  const handleMenuClose = (menu) => {
+    setAnchorEls((prev) => ({ ...prev, [menu]: null }));
+  };
+
+  const menuData = {
+    Solutions: [
+      { title: 'Open Source', description: 'Explore our open-core GitHub repository.' },
+      { title: 'Cloud Platform', description: 'Revolutionize your operations with Nautilus Cloud.' },
+      { title: 'Consulting', description: 'Access engineering services and direct support.' }
+    ],
+    Resources: [
+      { title: 'Documentation', description: 'Read our extensive documentation.' },
+      { title: 'API Reference', description: 'Explore our API reference.' },
+      { title: 'Community', description: 'Join our community discussions.' }
+    ],
+    'About Frozen': [
+      { title: 'About Us', description: 'Learn more about our company.' },
+      { title: 'Careers', description: 'Join our team and help shape the future.' },
+      { title: 'Contact', description: 'Get in touch with us.' }
+    ],
+    'Get Started': [
+      { title: 'Sign Up', description: 'Create a new account.' },
+      { title: 'Pricing', description: 'View our pricing plans.' },
+      { title: 'Demo', description: 'Request a demo.' }
+    ]
+  };
 
   return (
     <BarContainer>
@@ -64,27 +89,37 @@ const Navbar = () => {
           </IconButton> */}
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          {menuItems.map((menu, index) => (
-            <div key={index}>
+          {Object.keys(menuData).map((menu) => (
+            <div
+              key={menu}
+              onMouseEnter={(event) => handleMenuOpen(event, menu)} // 鼠标进入时打开菜单
+              onMouseLeave={() => handleMenuClose(menu)} // 鼠标离开时关闭菜单
+            >
               <Button
-                aria-controls={`menu-${index}`}
-                aria-haspopup='true'
-                onClick={(event) => handleMenuClick(event, index)}
-                style={{ color: 'grey', margin: '0 10px' }}
+                aria-controls={`${menu}-menu`}
+                aria-haspopup="true"
+                onClick={(event) => handleMenuOpen(event, menu)}
+                sx={{ color: 'grey', margin: '0 10px', marginTop: '12px', textTransform: 'none', fontSize: '1.2rem' }}
+                // style={{ color: 'grey', margin: '0 10px', textTransform: 'none' }}
               >
-                {menu.label}
+                {menu}
               </Button>
               <Menu
-                id={`menu-${index}`}
-                anchorEl={anchorEl}
+                id={`${menu}-menu`}
+                anchorEl={anchorEls[menu]}
                 keepMounted
-                open={Boolean(anchorEl) && menuIndex === index}
-                onClose={handleMenuClose}
+                open={Boolean(anchorEls[menu])}
+                onClose={() => handleMenuClose(menu)}
               >
-                {menu.items.map((item, idx) => (
-                  <MenuItem key={idx} onClick={handleMenuClose}>
-                    {item}
-                  </MenuItem>
+                {menuData[menu].map((item, index) => (
+                  <CustomMenuItem key={index} onClick={() => handleMenuClose(menu)}>
+                    <Typography variant="body1" style={{ fontWeight: 'bold' }}>
+                      {item.title}
+                    </Typography>
+                    <Typography variant="body2" style={{ color: 'gray' }}>
+                      {item.description}
+                    </Typography>
+                  </CustomMenuItem>
                 ))}
               </Menu>
             </div>

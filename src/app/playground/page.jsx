@@ -28,7 +28,7 @@ const Playground = () => {
 
     try {
       const response = await axios.post(
-        'https://your-backend-server.com/api/backtest',
+        'http://127.0.0.1:5001/api/strategy/execute',
         {
           strategyCode: codeText,
         }
@@ -48,7 +48,7 @@ const Playground = () => {
         <div className={styles.chart}>
           {/* <ChartComponent /> */}ChartComponent
           <br />
-          <button onClick={handleBacktestClick}>运行回测</button>
+          <button onClick={handleBacktestClick}>Run Backtest</button>
         </div>
         <div className={styles.terminal}>
           {/* <TerminalComponent /> */}TerminalComponent
