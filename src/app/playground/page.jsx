@@ -28,7 +28,7 @@ const Playground = () => {
 
     try {
       const response = await axios.post(
-        'http://116.205.117.24/api/strategy/execute',
+        'https://116.205.117.24/api/strategy/execute',
         {
           strategyCode: codeText,
         }
