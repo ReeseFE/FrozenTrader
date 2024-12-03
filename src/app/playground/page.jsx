@@ -34,7 +34,7 @@ const Playground = () => {
         }
       );
 
-      console.log('Backtest result:', response.data);
+      console.log('Backtest Result:', response.data);
     } catch (error) {
       console.error('Error during backtest:', error);
     }
