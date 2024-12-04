@@ -4,8 +4,8 @@ import Navbar from '@/components/Navbar.jsx';
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
+    <div className={styles.container}>
+      <Navbar className={styles.navBar} />
       <main className={styles.main}>
         <p className={styles.title}>
           A privacy-focused, easy-to-use quantitative research platform
@@ -18,6 +18,6 @@ export default function Home() {
           <button className={styles.btn}>Get Started</button>
         </Link>
       </main>
-    </>
+    </div>
   );
 }
