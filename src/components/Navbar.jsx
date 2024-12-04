@@ -15,14 +15,22 @@ const BarContainer = styled(AppBar)`
 `;
 
 const CustomPopoverContent = styled('div')(({ openMenu, menu }) => ({
-  padding: '10px',
-  opacity: openMenu === menu ? 1 : 0,
-  flexDirection: 'column',
   position: 'absolute',
-  backgroundColor: 'white',
-  boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+  padding: '10px',
+  display: 'flex',
+  flexDirection: 'column',
+  padding: '1rem',
+  width: 'fit-content',
+  gap: '0.3rem',
+  fontSize: '1rem',
+  opacity: openMenu === menu ? 1 : 0,
   zIndex: 1,
   visibility: openMenu === menu ? 'visible' : 'hidden',
+  backgroundColor: 'rgba(0, 0, 0, 0.9)',
+  boxShadow: '0 10px 10px rgba(0, 0, 0, 0.5)',
+  borderRadius: '15px',
+  border: '1px solid #2D2930',
+  padding: '10px',
   transition: 'opacity 0.3s',
 }));
 
@@ -98,14 +106,27 @@ const RightMenu = () => {
             menu={menu}
           >
             {menuData[menu].map((item, index) => (
-              <div key={index}>
-                <Typography variant='body1' style={{ fontWeight: 'bold' }}>
+              <Box
+                key={index}
+                sx={{
+                  borderRadius: '12px',
+                  width: 'max-content',
+                  padding: '0.7rem',
+                  border: '1px solid transparent',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    backgroundColor: '#1B1B1D',
+                    border: '1px solid #2D2930',
+                  },
+                }}
+              >
+                <Typography variant='body1' sx={{ fontWeight: 'bold' }}>
                   {item.title}
                 </Typography>
-                <Typography variant='body2' style={{ color: 'gray' }}>
+                <Typography variant='body2' sx={{ color: 'gray' }}>
                   {item.description}
                 </Typography>
-              </div>
+              </Box>
             ))}
           </CustomPopoverContent>
         </MenuItem>
