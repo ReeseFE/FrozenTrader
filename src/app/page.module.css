@@ -14,7 +14,7 @@
 }
 
 .main {
-  max-width: 1400px;
+  max-width: 1800px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -53,7 +53,7 @@
   line-height: 1.5;
   letter-spacing: 0.00938em;
   font-weight: 600;
-  color: #eeeeee;
+  color: #fff;
   background: rgb(102, 190, 225, 0.8);
   border: 2px inset #3e72c65d;
   border-radius: 3rem;

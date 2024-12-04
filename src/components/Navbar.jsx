@@ -14,20 +14,22 @@ const BarContainer = styled(AppBar)`
   box-shadow: none;
 `;
 
-const CustomPopoverContent = styled('div')`
-  padding: 10px;
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  background-color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-`;
+const CustomPopoverContent = styled('div')(({ openMenu, menu }) => ({
+  padding: '10px',
+  opacity: openMenu === menu ? 1 : 0,
+  flexDirection: 'column',
+  position: 'absolute',
+  backgroundColor: 'white',
+  boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+  zIndex: 1,
+  visibility: openMenu === menu ? 'visible' : 'hidden',
+  transition: 'opacity 0.3s',
+}));
 
 const MenuItem = styled('div')`
   position: relative;
   &:hover .popover-content {
-    display: flex;
+    opacity: 1;
   }
 `;
 
@@ -64,7 +66,19 @@ const RightMenu = () => {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '2px', // 调整文字和图标之间的间距
+                gap: '2px',
+                position: 'relative',
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  bottom: '-2px',
+                  left: '-2px',
+                  width: '100%',
+                  height: '2px',
+                  backgroundColor:
+                    openMenu === menu ? 'rgb(102, 190, 225)' : 'transparent',
+                  transition: 'background-color 0.3s',
+                },
               }}
             >
               {menu}
@@ -78,7 +92,11 @@ const RightMenu = () => {
               />
             </Box>
           </Button>
-          <CustomPopoverContent className='popover-content'>
+          <CustomPopoverContent
+            className='popover-content'
+            openMenu={openMenu}
+            menu={menu}
+          >
             {menuData[menu].map((item, index) => (
               <div key={index}>
                 <Typography variant='body1' style={{ fontWeight: 'bold' }}>
@@ -99,12 +117,7 @@ const RightMenu = () => {
 const Navbar = () => {
   return (
     <BarContainer>
-      <Toolbar
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}
-      >
+      <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Image
             alt='FrozenTrader-logo'
@@ -113,9 +126,7 @@ const Navbar = () => {
             src='/logo_white.svg'
             style={{ color: 'transparent', marginTop: '7px' }}
           />
-
           <div style={{ margin: '0 2px' }} />
-
           <Image
             alt='FrozenTrader-text-logo'
             width='100'
