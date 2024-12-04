@@ -110,7 +110,7 @@ const RightMenu = () => {
                 key={index}
                 sx={{
                   borderRadius: '12px',
-                  width: 'fit-content',
+                  width: '100%',
                   padding: '0.7rem',
                   border: '1px solid transparent',
                   transition: 'all 0.2s ease',
