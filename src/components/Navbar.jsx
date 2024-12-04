@@ -113,6 +113,7 @@ const RightMenu = () => {
                   width: '100%',
                   padding: '0.7rem',
                   border: '1px solid transparent',
+                  cursor: 'pointer',
                   transition: 'all 0.2s ease',
                   '&:hover': {
                     backgroundColor: '#1B1B1D',
