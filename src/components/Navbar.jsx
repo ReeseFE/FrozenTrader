@@ -110,7 +110,7 @@ const RightMenu = () => {
                 key={index}
                 sx={{
                   borderRadius: '12px',
-                  width: 'max-content',
+                  width: 'fit-content',
                   padding: '0.7rem',
                   border: '1px solid transparent',
                   transition: 'all 0.2s ease',
@@ -120,10 +120,16 @@ const RightMenu = () => {
                   },
                 }}
               >
-                <Typography variant='body1' sx={{ fontWeight: 'bold' }}>
+                <Typography
+                  variant='body1'
+                  sx={{ fontWeight: 'bold', whiteSpace: 'nowrap' }}
+                >
                   {item.title}
                 </Typography>
-                <Typography variant='body2' sx={{ color: 'gray' }}>
+                <Typography
+                  variant='body2'
+                  sx={{ color: 'gray', whiteSpace: 'nowrap' }}
+                >
                   {item.description}
                 </Typography>
               </Box>
