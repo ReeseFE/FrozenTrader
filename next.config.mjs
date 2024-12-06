@@ -21,7 +21,8 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://frozenalpha.site/api/:path*', // 代理到目标服务器
+        destination: '116.205.117.24:5000/api/:path*',
+        // destination: 'https://frozenalpha.site/api/:path*', // 代理到目标服务器
       },
     ];
   },
