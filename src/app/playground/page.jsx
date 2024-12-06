@@ -19,12 +19,9 @@ const Playground = () => {
     console.log(codeText);
 
     try {
-      const response = await axios.post(
-        'https://frozenalpha.site/api/strategy/execute',
-        {
-          strategyCode: codeText,
-        }
-      );
+      const response = await axios.post('/api/strategy/execute', {
+        strategyCode: codeText,
+      });
 
       setResult(response.data);
       console.log('Backtest Result:', response.data);
