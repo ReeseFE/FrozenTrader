@@ -17,14 +17,14 @@ const nextConfig = {
 
     return config;
   },
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'https://frozenalpha.site/api/:path*', // 代理到目标服务器
-      },
-    ];
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/api/:path*',
+  //       destination: 'https://frozenalpha.site/api/:path*', // 代理到目标服务器
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;
