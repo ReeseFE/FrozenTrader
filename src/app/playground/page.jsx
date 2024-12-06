@@ -20,7 +20,7 @@ const Playground = () => {
 
     try {
       const response = await axios.post(
-        'http://frozenalpha.site/api/strategy/execute',
+        'https://frozenalpha.site/api/strategy/execute',
         {
           strategyCode: codeText,
         }
