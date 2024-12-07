@@ -117,7 +117,7 @@ const FormInputWave = () => {
               </>
             ) : (
               <>
-                Don't have an account?{' '}
+                Don&apos;t have an account?{' '}
                 <a href='#' onClick={handleToggle}>
                   Register
                 </a>
