@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import Navbar from '@/components/Navbar.jsx';
 
 import './globals.css';
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={inter.className}>
+        <Navbar />
         <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
         <SpeedInsights />
       </body>

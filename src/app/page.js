@@ -1,11 +1,9 @@
 import Link from 'next/link';
 import styles from './page.module.css';
-import Navbar from '@/components/Navbar.jsx';
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Navbar className={styles.navBar} />
       <main className={styles.main}>
         <p className={styles.title}>
           A privacy-focused, easy-to-use quantitative research platform

@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { AppBar, Toolbar, Button, Typography, Box } from '@mui/material';
 import { styled } from '@mui/system';
@@ -138,6 +139,7 @@ const RightMenu = () => {
           </CustomPopoverContent>
         </MenuItem>
       ))}
+      
     </div>
   );
 };
@@ -146,23 +148,27 @@ const Navbar = () => {
   return (
     <BarContainer>
       <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Image
-            alt='FrozenTrader-logo'
-            width='47'
-            height='35'
-            src='/logo_white.svg'
-            style={{ color: 'transparent', marginTop: '7px' }}
-          />
-          <div style={{ margin: '0 2px' }} />
-          <Image
-            alt='FrozenTrader-text-logo'
-            width='100'
-            height='20'
-            src='text_light.svg'
-            style={{ color: 'transparent', marginTop: '12px' }}
-          />
-        </div>
+        <Link href='/' passHref>
+          <div
+            style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+          >
+            <Image
+              alt='FrozenTrader-logo'
+              width='47'
+              height='35'
+              src='/logo_white.svg'
+              style={{ color: 'transparent', marginTop: '7px' }}
+            />
+            <div style={{ margin: '0 2px' }} />
+            <Image
+              alt='FrozenTrader-text-logo'
+              width='100'
+              height='20'
+              src='text_light.svg'
+              style={{ color: 'transparent', marginTop: '12px' }}
+            />
+          </div>
+        </Link>
         <RightMenu />
       </Toolbar>
     </BarContainer>
