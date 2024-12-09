@@ -16,7 +16,7 @@
   padding: 20px 40px;
   border-radius: 5px;
   color: #fff;
-  transition: transform 0.6s;
+  transition: transform 1s;
   transform-style: preserve-3d;
 }
 
@@ -32,6 +32,17 @@
 .container a {
   text-decoration: none;
   color: lightblue;
+}
+
+.front {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.back {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
 }
 
 .btn {
@@ -87,12 +98,12 @@
   position: absolute;
   top: 15px;
   left: 0;
+  font-size: 18px;
   pointer-events: none;
 }
 
 .form-control label span {
   display: inline-block;
-  font-size: 18px;
   min-width: 5px;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }

@@ -1,18 +1,23 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 import styles from './login.module.css';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
-const FormInputWave = () => {
+const Login = () => {
+  // 表单项
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // 表单提交结果提示
   const [error, setError] = useState(null);
-  const [isRegistering, setIsRegistering] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [isAlert, setIsAlert] = useState(false);
+  // 登录卡片翻转
+  const [isSigningUp, setIsSigningUp] = useState(false);
+  // 控制文字延迟变化，等卡片转到中间再变
+  const [flipped, setFlipped] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const labels = document.querySelectorAll(
       `.${styles['form-control']} label`
     );
@@ -32,7 +37,7 @@ const FormInputWave = () => {
     e.preventDefault();
     setError(null);
 
-    if (isRegistering) {
+    if (isSigningUp) {
       const { error } = await supabase.auth.signUp({
         email,
         password,
@@ -40,9 +45,9 @@ const FormInputWave = () => {
 
       if (error) {
         setError(error.message);
-        setOpen(true);
+        setIsAlert(true);
       } else {
-        console.log('Registration successful');
+        console.log('Signup successful');
         window.history.back(); // 注册成功后回推到上一页
       }
     } else {
@@ -59,7 +64,7 @@ const FormInputWave = () => {
         } else {
           setError(error.message);
         }
-        setOpen(true);
+        setIsAlert(true);
       } else {
         console.log('Login successful');
         window.history.back(); // 登录成功后回推到上一页
@@ -71,62 +76,102 @@ const FormInputWave = () => {
     if (reason === 'clickaway') {
       return;
     }
-    setOpen(false);
+    set(false);
   };
 
   const handleToggle = () => {
-    setIsRegistering(!isRegistering);
+    setIsSigningUp(!isSigningUp);
+    setTimeout(() => {
+      setFlipped(!flipped);
+    }, 300);
   };
 
   return (
     <div className={styles.background}>
-      <div className={`${styles.container} ${isRegistering ? styles.flipped : ''}`}>
-        <h1>{isRegistering ? 'Please Register' : 'Please Login'}</h1>
-        <form onSubmit={handleSubmit}>
-          <div className={styles['form-control']}>
-            <input
-              type='text'
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label>Email</label>
-          </div>
+      <div
+        className={`${styles.container} ${isSigningUp ? styles.flipped : ''}`}
+      >
+        <div className={styles.card}>
+          {!isSigningUp ? (
+            <div className={styles.front}>
+              <h1>{flipped ? 'Please Signup' : 'Please Login'}</h1>
+              <form onSubmit={handleSubmit}>
+                <div className={styles['form-control']}>
+                  <input
+                    type='text'
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <label>Email</label>
+                </div>
 
-          <div className={styles['form-control']}>
-            <input
-              type='password'
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <label>Password</label>
-          </div>
+                <div className={styles['form-control']}>
+                  <input
+                    type='password'
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <label>Password</label>
+                </div>
 
-          <button className={styles.btn} type='submit'>
-            {isRegistering ? 'Register' : 'Login'}
-          </button>
-
-          <p className={styles.text}>
-            {isRegistering ? (
-              <>
-                Already have an account?{' '}
-                <a href='#' onClick={handleToggle}>
+                <button className={styles.btn} type='submit'>
                   Login
-                </a>
-              </>
-            ) : (
-              <>
-                Don&apos;t have an account?{' '}
-                <a href='#' onClick={handleToggle}>
-                  Register
-                </a>
-              </>
-            )}
-          </p>
-        </form>
+                </button>
+
+                <p className={styles.text}>
+                  {flipped
+                    ? 'Already have an account? '
+                    : "Don't have an account? "}
+                  <a href='#' onClick={handleToggle}>
+                    {flipped ? 'Login' : 'Signup'}
+                  </a>
+                </p>
+              </form>
+            </div>
+          ) : (
+            <div className={styles.back}>
+              <h1>{flipped ? 'Please Signup' : 'Please Login'}</h1>
+              <form onSubmit={handleSubmit}>
+                <div className={styles['form-control']}>
+                  <input
+                    type='text'
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <label>Email</label>
+                </div>
+
+                <div className={styles['form-control']}>
+                  <input
+                    type='password'
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <label>Password</label>
+                </div>
+
+                <button className={styles.btn} type='submit'>
+                  {flipped ? 'Signup' : 'Login'}
+                </button>
+
+                <p className={styles.text}>
+                  {flipped
+                    ? 'Already have an account? '
+                    : "Don't have an account? "}
+                  <a href='#' onClick={handleToggle}>
+                    {flipped ? 'Login' : 'Signup'}
+                  </a>
+                </p>
+              </form>
+            </div>
+          )}
+        </div>
       </div>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={isAlert} autoHideDuration={6000} onClose={handleClose}>
         <MuiAlert onClose={handleClose} severity='error' sx={{ width: '100%' }}>
           {error}
         </MuiAlert>
@@ -135,4 +180,4 @@ const FormInputWave = () => {
   );
 };
 
-export default FormInputWave;
+export default Login;
