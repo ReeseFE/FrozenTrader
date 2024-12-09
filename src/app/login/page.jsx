@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useLayoutEffect } from 'react';
-import { supabase } from '@/lib/supabaseClient';
+import { supabase } from '@/utils/supabase/client';
 import styles from './login.module.css';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
