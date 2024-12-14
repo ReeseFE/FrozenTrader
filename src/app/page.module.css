@@ -7,10 +7,12 @@
   background-size: 200% 300%; /* 使背景图像覆盖整个区域 */
   background-position: center; /* 将背景图像居中 */
   background-repeat: no-repeat; /* 不重复背景图像 */
+  height: 100vh;
 }
 
 .navBar {
   width: 100%;
+  display: flex;
 }
 
 .main {
@@ -21,6 +23,7 @@
   align-items: center;
   padding: 3rem 15rem;
   min-height: 100vh;
+  overflow: hidden;
   color: #fff;
 }
 
@@ -30,20 +33,31 @@
   max-width: 100%;
   width: var(--max-width);
 }
+
 .title {
   margin-top: 3.5rem;
-  font-size: 3.7rem;
+  font-size: clamp(3rem, 5vw, 3.7rem);
   font-weight: 500;
   text-align: center;
+  white-space: pre-line;
+  display: -webkit-box; /* 使用弹性盒子布局 */
+  -webkit-box-orient: vertical; /* 垂直排列 */
+  -webkit-line-clamp: 2; /* 限制为两行 */
+  line-clamp: 2;  /* 添加标准属性 */
+  overflow: hidden; /* 取消注释，这个属性是必需的 */
+  text-overflow: ellipsis; /* 使用省略号表示超出部分 */
+  width: auto; /* 设置为 auto 以适应内容 */
+  min-width: 300px;
 }
 
 .desc {
   width: 85%;
   margin-top: -3.5rem;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   text-align: center;
   opacity: 0.8;
   line-height: 1.5;
+  overflow: hidden;
 }
 
 .btn {
@@ -57,8 +71,9 @@
   background: rgb(102, 190, 225, 0.8);
   border: 2px inset #3e72c65d;
   border-radius: 3rem;
-  transition: background 0.3s ease, transform 0.3s ease; /* 添加过渡效果 */
+  transition: background 0.3s ease, transform 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .cssbuttons {
@@ -70,7 +85,7 @@
   border-radius: 0.8em;
   cursor: pointer;
   border: none;
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: linear-gradient(to right, #bac7d7, #f3e2d5);
   color: ghostwhite;
   overflow: hidden;
 }
@@ -102,7 +117,7 @@
 
 .cssbuttons::before {
   content: "";
-  background: #000;
+  background: #21212196;
   width: 120%;
   left: -10%;
   transform: skew(30deg);
@@ -116,3 +131,33 @@
 .cssbuttons:active {
   transform: scale(0.95);
 }
+
+/* .button {
+  padding: 17px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: #168dd24d;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.5s ease;
+}
+
+.button:hover {
+  letter-spacing: 3px;
+  background-color: hsla(216, 80%, 39%, 0.394);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgba(18, 87, 205, 0.482) 0px 7px 29px 0px;
+}
+
+.button:active {
+  letter-spacing: 3px;
+  background-color: hsla(220, 68%, 50%, 0.794);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(22, 6, 104) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+} */

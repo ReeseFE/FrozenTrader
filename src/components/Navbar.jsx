@@ -121,6 +121,11 @@ const RightMenu = () => {
                     border: '1px solid #2D2930',
                   },
                 }}
+                onClick={() => {
+                  if (item.url) {
+                    window.open(item.url, '_blank');
+                  }
+                }}
               >
                 <Typography
                   variant='body1'

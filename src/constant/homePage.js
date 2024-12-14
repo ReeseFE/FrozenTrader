@@ -1,8 +1,9 @@
 const menuData = {
   Solutions: [
     {
-      title: 'Open Source',
-      description: 'Explore our open-core GitHub repository.',
+      title: 'Source Code',
+      description: 'Explore our closed-core GitHub repository.',
+      url: 'https://github.com/Mxyzptlk-Z/frozen'
     },
     {
       title: 'Cloud Platform',
@@ -17,6 +18,7 @@ const menuData = {
     {
       title: 'Documentation',
       description: 'Access our extensive documentation.',
+      url: 'https://frozen.readthedocs.io/en/latest/'
     },
     { title: 'API Reference', description: 'Explore our API reference.' },
     { title: 'Community', description: 'Join our community discussions.' },
