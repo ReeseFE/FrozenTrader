@@ -1,0 +1,19 @@
+.indicators {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+  transition: height 0.3s ease;
+} 

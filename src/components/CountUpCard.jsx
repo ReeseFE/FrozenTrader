@@ -43,15 +43,18 @@ const CountUpCard = ({ endValue, title, duration = 2000 }) => {
           <div key={i} className={`${styles.tracker} ${styles[`tr-${i + 1}`]}`}></div>
         ))}
         <div id="card" className={styles.card}>
-          <Typography variant="h3" className={styles.number}>
-            {count}+
-          </Typography>
-          <Typography variant="h6" className={styles.cardTitle}>
-            {title}
-          </Typography>
-        </div>
+          {/* <p className={styles.prompt}>HOVER OVER :D</p>
+          <div className={styles.title}> */}
+            <Typography variant="h3" className={styles.number}>
+              {count}+
+            </Typography>
+            <Typography variant="h6" className={styles.cardTitle}>
+              {title}
+            </Typography>
+        {/* </div> */}
       </div>
     </div>
+  </div>
   );
 };
 
