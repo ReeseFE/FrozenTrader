@@ -3,23 +3,23 @@
   flex-direction: column;
   align-items: center;
   background: rgb(27, 27, 29);
-  background-image: url('/background.png'); /* 添加背景图像 */
-  background-size: 200% 300%; /* 使背景图像覆盖整个区域 */
-  background-position: center; /* 将背景图像居中 */
-  background-repeat: no-repeat; /* 不重复背景图像 */
+  background-image: url('/background.png');
+  background-size: 200% 300%;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
-  overflow: hidden;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .section {
-  scroll-snap-align: start;
   height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* overflow: hidden; */
+  position: relative;
 }
 
 @keyframes bounce {
@@ -54,7 +54,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 3rem 15rem;
+  padding: 2rem 10rem;
   min-height: 100vh;
   overflow: hidden;
   color: ghostwhite;
@@ -69,30 +69,34 @@
 }
 
 .title {
-  margin-top: 9.5rem;
+  margin-top: 20rem;
   margin-bottom: 3rem;
-  font-size: clamp(3rem, 5vw, 3.7rem);
+  font-size: clamp(2.8rem, 5vw, 3.7rem);
   font-weight: 500;
   text-align: center;
   white-space: pre-line;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
   width: auto;
-  min-width: 300px;
+  min-width: 600px;
+  max-width: 100%;
 }
 
 .desc {
   width: 85%;
-  margin-top: 0rem;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  margin-top: -0.5rem;
+  font-size: clamp(1.1rem, 2vw, 1.1rem);
   text-align: center;
+  white-space: pre-line;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
   opacity: 0.8;
   line-height: 1.5;
   overflow: hidden;
+  min-width: 500px;
+  max-width: 100%;
 }
 
 /* .btn {
@@ -123,8 +127,8 @@
   background: linear-gradient(to right, #bac7d7, #f3e2d5);
   color: ghostwhite;
   overflow: hidden;
-  margin-top: 1.5rem;
-  margin-left: 2.3rem;
+  margin-top: 0rem;
+  margin-left: 0rem;
   justify-content: center;
 }
 
@@ -203,20 +207,22 @@
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  grid-template-rows: repeat(3, 100px);
+  gap: 0rem;
   width: 100%;
-  /* width: fit-content; */
+  width: fit-content;
+  justify-items: center;
   justify-content: center;
+  align-items: center;
+  align-content: center;
+  grid-auto-flow: row;
   max-width: 850px;
-  margin-top: 3rem;
-  /* margin-bottom: 4rem; */
-  /* margin: 2rem 0 4rem 0; */
-  /* gap: 2 rem; */
+  margin-top: 6rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .statsGrid {
-    grid-template-columns: repeat(2, 260px);
+    grid-template-columns: repeat(1, 260px);
   }
 }
 
@@ -224,4 +230,18 @@
   .statsGrid {
     grid-template-columns: repeat(1, 260px);
   }
+}
+
+.secondPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.topButton {
+  text-decoration: none;
+  margin-top: -10px;
 }
