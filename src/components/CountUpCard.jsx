@@ -6,6 +6,7 @@ import styles from './CountUpCard.module.css';
 
 const CountUpCard = ({ endValue, title, duration = 2000 }) => {
   const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
     let startTime;
@@ -27,34 +28,31 @@ const CountUpCard = ({ endValue, title, duration = 2000 }) => {
     return () => cancelAnimationFrame(animationFrame);
   }, [endValue, duration]);
 
+  useEffect(() => {
+    // 模拟组件加载后显示卡片
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100); // 延迟100毫秒后显示
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    // <Box className={styles.card}>
-    //   <Typography variant="h3" className={styles.number}>
-    //     {count}+
-    //   </Typography>
-    //   <Typography variant="h6" className={styles.title}>
-    //     {title}
-    //   </Typography>
-    // </Box>
     <div className={`${styles.container} ${styles.noselect}`}>
       <div className={styles.canvas}>
-        {/* 创建25个追踪器 div */}
         {[...Array(25)].map((_, i) => (
           <div key={i} className={`${styles.tracker} ${styles[`tr-${i + 1}`]}`}></div>
         ))}
-        <div id="card" className={styles.card}>
-          {/* <p className={styles.prompt}>HOVER OVER :D</p>
-          <div className={styles.title}> */}
-            <Typography variant="h3" className={styles.number}>
-              {count}+
-            </Typography>
-            <Typography variant="h6" className={styles.cardTitle}>
-              {title}
-            </Typography>
-        {/* </div> */}
+        <div id="card" className={`${styles.card} ${isVisible ? styles.cardVisible : ''}`}>
+          <Typography variant="h3" className={styles.number}>
+            {count}+
+          </Typography>
+          <Typography variant="h6" className={styles.cardTitle}>
+            {title}
+          </Typography>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 

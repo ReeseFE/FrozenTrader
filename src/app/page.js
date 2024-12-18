@@ -5,6 +5,17 @@ import styles from './page.module.css';
 import CountUpCard from '@/components/CountUpCard';
 
 export default function Home() {
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
+
+  useEffect(() => {
+    // 模拟组件加载后显示按钮
+    const timer = setTimeout(() => {
+      setIsButtonVisible(true);
+    }, 100); // 延迟100毫秒后显示
+
+    return () => clearTimeout(timer);
+  }, []);
+
   // 平滑滚动到下一部分
   const scrollToNextSection = () => {
     const sections = document.querySelectorAll('section');
@@ -39,7 +50,7 @@ export default function Home() {
             <CountUpCard endValue={500} title="Daily Trades" />
             <CountUpCard endValue={50} title="Trading Strategies" />
           </div>
-          <Link href='/playground' className={styles.topButton}>
+          <Link href='/playground' className={`${styles.button} ${isButtonVisible ? styles.buttonVisible : ''}`}>
             <button className={styles.cssbuttons}>
               <span>
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

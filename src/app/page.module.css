@@ -13,12 +13,11 @@
 }
 
 .section {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* overflow: hidden; */
   position: relative;
 }
 
@@ -69,7 +68,7 @@
 }
 
 .title {
-  margin-top: 16.5rem;
+  margin-top: 14rem;
   margin-bottom: 3rem;
   font-size: clamp(2.8rem, 5vw, 3.7rem);
   font-weight: 500;
@@ -81,13 +80,7 @@
   text-overflow: ellipsis;
   width: auto;
   min-width: 600px;
-  max-width: 100%;
-}
-
-@media (max-width: 1100px) {
-  .title {
-    margin-top: 23rem;
-  }
+  max-width: 1000px;
 }
 
 .desc {
@@ -102,7 +95,7 @@
   line-height: 1.5;
   overflow: hidden;
   min-width: 500px;
-  max-width: 100%;
+  max-width: 800px;
 }
 
 /* .btn {
@@ -227,8 +220,23 @@
 
 /* 在窄屏上应用特定的行高 */
 @media (max-width: 1100px) {
+  .title {
+    min-width: 500px;
+    margin-top: 22rem;
+  }
   .statsGrid {
     grid-template-columns: repeat(1, 260px);
     grid-template-rows: repeat(3, 100px); /* 仅在窄屏上应用 */
   }
+}
+
+.button {
+  opacity: 0;
+  transform: translateY(20px); /* 初始位置稍微向下 */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.buttonVisible {
+  opacity: 1;
+  transform: translateY(0); /* 移动到最终位置 */
 }

@@ -17,6 +17,17 @@
   transform: translateY(-5px);
 } */
 
+.card {
+  opacity: 0;
+  transform: translateY(20px); /* 初始位置稍微向下 */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0); /* 移动到最终位置 */
+}
+
 .number {
   background: linear-gradient(45deg, 
     #adcbe8 0%,
