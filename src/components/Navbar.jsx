@@ -6,6 +6,7 @@ import { AppBar, Toolbar, Button, Typography, Box } from '@mui/material';
 import { styled } from '@mui/system';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { menuData } from '@/constant/homePage';
+import VerticalToggleButtons from '@/components/VerticalToggleButtons';
 
 const BarContainer = styled(AppBar)`
   max-width: 1280px;
@@ -54,7 +55,7 @@ const RightMenu = () => {
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', flexGrow: 1 }}>
       {Object.keys(menuData).map((menu) => (
         <MenuItem
           key={menu}
@@ -144,7 +145,7 @@ const RightMenu = () => {
           </CustomPopoverContent>
         </MenuItem>
       ))}
-      
+      <VerticalToggleButtons />
     </div>
   );
 };
