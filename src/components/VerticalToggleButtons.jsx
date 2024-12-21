@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import MenuIcon from '@mui/icons-material/Menu';
 import ToggleButton from '@mui/material/ToggleButton';
 import { styled } from '@mui/system';
 import styles from './VerticalToggleButtons.module.css';
@@ -38,15 +37,18 @@ export default function VerticalToggleButtons() {
 
   return (
     <div>
-      <CustomToggleButton value="list" aria-label="list" onClick={handleToggle}>
-        <FontAwesomeIcon icon={faBars} size="lg" />
+      <CustomToggleButton value='list' aria-label='list' onClick={handleToggle}>
+        <MenuIcon fontSize='large' />
       </CustomToggleButton>
       {menuOpen && (
         <div className={styles.dropdownMenu}>
           <ul>
             {Object.entries(menuData).map(([category, items]) => (
               <li key={category}>
-                <div onClick={() => handleSubMenuToggle(category)} className={styles.category}>
+                <div
+                  onClick={() => handleSubMenuToggle(category)}
+                  className={styles.category}
+                >
                   <strong>{category}</strong>
                 </div>
                 {subMenuOpen[category] && (
@@ -96,4 +98,4 @@ export default function VerticalToggleButtons() {
       )}
     </div>
   );
-} 
+}
