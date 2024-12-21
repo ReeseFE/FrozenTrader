@@ -1,14 +1,19 @@
 import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import ToggleButton from '@mui/material/ToggleButton';
 import { styled } from '@mui/system';
 import styles from './VerticalToggleButtons.module.css';
-import { menuData } from '@/constant/homePage'; // 确保路径正确
+import { menuData } from '@/constant/homePage';
 import { Box, Typography } from '@mui/material';
 
 const CustomToggleButton = styled(ToggleButton)(({ theme }) => ({
   color: 'rgb(170, 170, 170)',
   backgroundColor: 'rgba(255, 255, 255, 0.0)',
+  position: 'fixed', // 固定在屏幕上
+  top: '10px', // 距离顶部的距离
+  right: '10px', // 距离右边的距离
+  zIndex: 1100, // 确保在菜单之上
   '&.Mui-selected': {
     color: 'black',
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
@@ -16,7 +21,6 @@ const CustomToggleButton = styled(ToggleButton)(({ theme }) => ({
   '&:hover': {
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
   },
-  marginTop: '12px',
   fontSize: '1rem',
 }));
 
@@ -38,10 +42,10 @@ export default function VerticalToggleButtons() {
   return (
     <div>
       <CustomToggleButton value='list' aria-label='list' onClick={handleToggle}>
-        <MenuIcon fontSize='medium' />
+        {menuOpen ? <CloseIcon fontSize='medium' /> : <MenuIcon fontSize='medium' />}
       </CustomToggleButton>
       {menuOpen && (
-        <div className={styles.dropdownMenu}>
+        <div className={styles.fullScreenMenu}>
           <ul>
             {Object.entries(menuData).map(([category, items]) => (
               <li key={category}>

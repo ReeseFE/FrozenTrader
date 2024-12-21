@@ -18,6 +18,17 @@ const BarContainer = styled(AppBar)`
     transition: transform 0.3s ease;
 `;
 
+const BackgroundOverlay = styled('div')`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(33, 33, 33, 0.95);
+    z-index: 999; /* 确保在其他内容之上 */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+`;
+
 const CustomPopoverContent = styled('div')(({ openMenu, menu }) => ({
     position: 'absolute',
     padding: '10px',
@@ -183,6 +194,7 @@ const RightMenu = () => {
 const Navbar = () => {
     const [visible, setVisible] = useState(true);
     const [lastScrollTop, setLastScrollTop] = useState(0);
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -201,6 +213,7 @@ const Navbar = () => {
                 setVisible(true);
             }
 
+            setScrolled(currentScrollTop > 100);
             setLastScrollTop(currentScrollTop);
         };
 
@@ -211,45 +224,53 @@ const Navbar = () => {
     }, [lastScrollTop]);
 
     return (
-        <BarContainer
-            className={styles.navBar}
-            style={{
-                transform: visible
-                ? 'translate(-50%, 0)'
-                : 'translate(-50%, -100px)',
-            }}
-        >
-            <Toolbar
-                style={{ display: 'flex', justifyContent: 'space-between' }}
+        <>
+            <BackgroundOverlay
+                style={{
+                    transform: visible ? 'translateY(0)' : 'translateY(-100px)',
+                    opacity: scrolled ? 1 : 0,
+                }}
+            />
+            <BarContainer
+                className={styles.navBar}
+                style={{
+                    transform: visible
+                        ? 'translate(-50%, 0)'
+                        : 'translate(-50%, -100px)',
+                }}
             >
-                <Link href='/' passHref>
-                    <div
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            cursor: 'pointer',
-                        }}
-                    >
-                        <Image
-                            alt='FrozenTrader-logo'
-                            width='47'
-                            height='35'
-                            src='/logo_white.svg'
-                            style={{ color: 'transparent', marginTop: '7px' }}
-                        />
-                        <div style={{ margin: '0 2px' }} />
-                        <Image
-                            alt='FrozenTrader-text-logo'
-                            width='100'
-                            height='20'
-                            src='text_light.svg'
-                            style={{ color: 'transparent', marginTop: '12px' }}
-                        />
-                    </div>
-                </Link>
-                <RightMenu />
-            </Toolbar>
-        </BarContainer>
+                <Toolbar
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                >
+                    <Link href='/' passHref>
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                cursor: 'pointer',
+                            }}
+                        >
+                            <Image
+                                alt='FrozenTrader-logo'
+                                width='47'
+                                height='35'
+                                src='/logo_white.svg'
+                                style={{ color: 'transparent', marginTop: '7px' }}
+                            />
+                            <div style={{ margin: '0 2px' }} />
+                            <Image
+                                alt='FrozenTrader-text-logo'
+                                width='100'
+                                height='20'
+                                src='text_light.svg'
+                                style={{ color: 'transparent', marginTop: '12px' }}
+                            />
+                        </div>
+                    </Link>
+                    <RightMenu />
+                </Toolbar>
+            </BarContainer>
+        </>
     );
 };
 
