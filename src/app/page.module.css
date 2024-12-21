@@ -14,7 +14,7 @@
 
 .section {
   /* height:100%; */
-  /* width: 100%; */
+  width: 100%;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -247,5 +247,25 @@
   }
   .cssbuttons {
     min-width: 180px;
+  }
+}
+
+.menuContainer {
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .menuContainer {
+    display: none; /* 在窄屏时隐藏菜单 */
+  }
+}
+
+.toggleButtonContainer {
+  display: none; /* 默认隐藏 */
+}
+
+@media (max-width: 900px) {
+  .toggleButtonContainer {
+    display: block; /* 在窄屏时显示 */
   }
 }
