@@ -7,7 +7,7 @@ import { menuData } from '@/constant/homePage'; // 确保路径正确
 import { Box, Typography } from '@mui/material';
 
 const CustomToggleButton = styled(ToggleButton)(({ theme }) => ({
-  color: 'grey',
+  color: 'rgb(170, 170, 170)',
   backgroundColor: 'rgba(255, 255, 255, 0.0)',
   '&.Mui-selected': {
     color: 'black',
@@ -38,7 +38,7 @@ export default function VerticalToggleButtons() {
   return (
     <div>
       <CustomToggleButton value='list' aria-label='list' onClick={handleToggle}>
-        <MenuIcon fontSize='large' />
+        <MenuIcon fontSize='medium' />
       </CustomToggleButton>
       {menuOpen && (
         <div className={styles.dropdownMenu}>
