@@ -6,7 +6,7 @@ import { AppBar, Toolbar, Button, Typography, Box } from '@mui/material';
 import { styled } from '@mui/system';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { menuData } from '@/constant/homePage';
-import VerticalToggleButtons from '@/components/VerticalToggleButtons';
+import VerticalToggleButtons from '@/components/VerticalToggleButtons/VerticalToggleButtons.jsx';
 import styles from '../app/page.module.css';
 
 const BarContainer = styled(AppBar)`

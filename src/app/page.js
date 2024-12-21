@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
-import CountUpCard from '@/components/CountUpCard';
+import CountUpCard from '@/components/CountUpCard/CountUpCard.jsx';
 
 export default function Home() {
   const [isButtonVisible, setIsButtonVisible] = useState(false);
