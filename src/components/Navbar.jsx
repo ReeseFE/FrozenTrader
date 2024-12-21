@@ -15,7 +15,7 @@ const BarContainer = styled(AppBar)`
     transform: translateX(-50%);
     background-color: transparent;
     box-shadow: none;
-    transition: all 0.4s ease;
+    transition: transform 0.3s ease;
 `;
 
 const CustomPopoverContent = styled('div')(({ openMenu, menu }) => ({
@@ -181,30 +181,42 @@ const RightMenu = () => {
 };
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
+    const [visible, setVisible] = useState(true);
+    const [lastScrollTop, setLastScrollTop] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setScrolled(true);
+            const currentScrollTop = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            if (currentScrollTop + windowHeight >= documentHeight) {
+                // At the bottom of the page
+                setVisible(false);
+            } else if (currentScrollTop > lastScrollTop && currentScrollTop > 100) {
+                // Scrolling down and not at the top
+                setVisible(false);
             } else {
-                setScrolled(false);
+                // Scrolling up or at the top
+                setVisible(true);
             }
+
+            setLastScrollTop(currentScrollTop);
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [lastScrollTop]);
 
     return (
         <BarContainer
             className={styles.navBar}
             style={{
-                transform: scrolled
-                    ? 'translate(-50%, -100px)'
-                    : 'translate(-50%, 0)',
+                transform: visible
+                ? 'translate(-50%, 0)'
+                : 'translate(-50%, -100px)',
             }}
         >
             <Toolbar
