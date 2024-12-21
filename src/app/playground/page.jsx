@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
-import axios from 'axios';
 import styles from './playground.module.css';
 import mockData from './mock.json';
 import LineChart from '@/components/charts/LineChart';
