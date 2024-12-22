@@ -77,8 +77,9 @@ export default function VerticalToggleButtons() {
                           sx={{
                             borderRadius: '12px',
                             width: '100%',
-                            marginLeft: '3vw',
+                            // marginLeft: '3vw',
                             padding: '0.5rem',
+                            paddingLeft: '3vw',
                             border: '1px solid transparent',
                             cursor: 'pointer',
                             transition: 'all 0.2s ease',
