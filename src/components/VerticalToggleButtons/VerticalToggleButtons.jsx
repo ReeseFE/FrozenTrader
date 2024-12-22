@@ -2,7 +2,6 @@ import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ToggleButton from '@mui/material/ToggleButton';
 import { styled } from '@mui/system';
 import styles from './VerticalToggleButtons.module.css';
@@ -73,7 +72,7 @@ export default function VerticalToggleButtons() {
                 >
                   <strong>{category}</strong>
                   <div className={styles.iconContainer}>
-                    {subMenuOpen[category] ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                    {subMenuOpen[category] ? <ExpandMoreIcon /> : <ExpandMoreIcon />}
                   </div>
                 </div>
                 {subMenuOpen[category] && (
