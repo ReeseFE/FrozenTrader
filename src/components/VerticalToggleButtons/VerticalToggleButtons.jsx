@@ -1,6 +1,8 @@
 import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ToggleButton from '@mui/material/ToggleButton';
 import { styled } from '@mui/system';
 import styles from './VerticalToggleButtons.module.css';
@@ -10,10 +12,10 @@ import { Box, Typography } from '@mui/material';
 const CustomToggleButton = styled(ToggleButton)(({ theme }) => ({
   color: 'rgb(170, 170, 170)',
   backgroundColor: 'rgba(255, 255, 255, 0.0)',
-  position: 'fixed', // 固定在屏幕上
-  top: '10px', // 距离顶部的距离
-  right: '10px', // 距离右边的距离
-  zIndex: 1100, // 确保在菜单之上
+  position: 'fixed',
+  top: '10px',
+  right: '10px',
+  zIndex: 1100,
   '&.Mui-selected': {
     color: 'black',
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
@@ -22,7 +24,7 @@ const CustomToggleButton = styled(ToggleButton)(({ theme }) => ({
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
   },
   fontSize: '1rem',
-  borderRadius: '12px', // 设置整个卡片的圆角
+  borderRadius: '12px',
 }));
 
 export default function VerticalToggleButtons() {
@@ -43,12 +45,14 @@ export default function VerticalToggleButtons() {
   const handleSubMenuToggle = (category) => {
     setSubMenuOpen((prev) => {
       const newSubMenuOpen = Object.keys(prev).reduce((acc, key) => {
-        acc[key] = false; // 收起所有子菜单
+        acc[key] = false;
         return acc;
       }, {});
+      const isOpen = !prev[category];
+      console.log(`Toggling ${category}: ${isOpen}`);
       return {
         ...newSubMenuOpen,
-        [category]: !prev[category], // 仅展开当前点击的子菜单
+        [category]: isOpen,
       };
     });
   };
@@ -65,9 +69,12 @@ export default function VerticalToggleButtons() {
               <li key={category}>
                 <div
                   onClick={() => handleSubMenuToggle(category)}
-                  className={styles.category}
+                  className={`${styles.category} ${subMenuOpen[category] ? styles.open : ''}`}
                 >
                   <strong>{category}</strong>
+                  <div className={styles.iconContainer}>
+                    {subMenuOpen[category] ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                  </div>
                 </div>
                 {subMenuOpen[category] && (
                   <ul className={styles.subMenu}>
@@ -77,7 +84,6 @@ export default function VerticalToggleButtons() {
                           sx={{
                             borderRadius: '12px',
                             width: '100%',
-                            // marginLeft: '3vw',
                             padding: '0.5rem',
                             paddingLeft: '3vw',
                             border: '1px solid transparent',

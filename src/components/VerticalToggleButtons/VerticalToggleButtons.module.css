@@ -49,6 +49,7 @@
   align-items: center;
   justify-content: space-between;
   padding-left: 3vw;
+  padding-right: 7vw;
   padding-bottom: 1.5rem;
 }
 
@@ -66,4 +67,14 @@
 
 .noScroll {
   overflow: hidden !important;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.category.open .iconContainer {
+  transform: rotate(180deg);
 }
