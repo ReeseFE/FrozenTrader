@@ -22,6 +22,7 @@ const CustomToggleButton = styled(ToggleButton)(({ theme }) => ({
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
   },
   fontSize: '1rem',
+  borderRadius: '12px', // 设置整个卡片的圆角
 }));
 
 export default function VerticalToggleButtons() {
@@ -29,14 +30,27 @@ export default function VerticalToggleButtons() {
   const [subMenuOpen, setSubMenuOpen] = React.useState({});
 
   const handleToggle = () => {
-    setMenuOpen((prev) => !prev);
+    setMenuOpen((prev) => {
+      if (!prev) {
+        document.body.classList.add(styles.noScroll);
+      } else {
+        document.body.classList.remove(styles.noScroll);
+      }
+      return !prev;
+    });
   };
 
   const handleSubMenuToggle = (category) => {
-    setSubMenuOpen((prev) => ({
-      ...prev,
-      [category]: !prev[category],
-    }));
+    setSubMenuOpen((prev) => {
+      const newSubMenuOpen = Object.keys(prev).reduce((acc, key) => {
+        acc[key] = false; // 收起所有子菜单
+        return acc;
+      }, {});
+      return {
+        ...newSubMenuOpen,
+        [category]: !prev[category], // 仅展开当前点击的子菜单
+      };
+    });
   };
 
   return (
@@ -63,7 +77,8 @@ export default function VerticalToggleButtons() {
                           sx={{
                             borderRadius: '12px',
                             width: '100%',
-                            padding: '0.7rem',
+                            marginLeft: '3vw',
+                            padding: '0.5rem',
                             border: '1px solid transparent',
                             cursor: 'pointer',
                             transition: 'all 0.2s ease',
