@@ -187,6 +187,11 @@ const RightMenu = () => {
             <div className={styles.toggleButtonContainer}>
                 <VerticalToggleButtons />
             </div>
+            <Link href="/playground" passHref>
+                <Button className={styles.navbuttons}>
+                    <span>Go Live</span>
+                </Button>
+            </Link>
         </div>
     );
 };

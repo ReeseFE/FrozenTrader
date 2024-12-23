@@ -71,7 +71,7 @@ export default function Home() {
                                         fill='currentColor'
                                     ></path>
                                 </svg>
-                                Get Started
+                                Dev Online
                             </span>
                         </button>
                     </Link>

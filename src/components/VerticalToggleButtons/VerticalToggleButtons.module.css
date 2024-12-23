@@ -53,6 +53,12 @@
   padding-bottom: 1.5rem;
 }
 
+@media (max-width: 500px) {
+  .category {
+    padding-right: 10.5vw;
+  }
+}
+
 .category:hover {
   background-color: transparent;
 }
