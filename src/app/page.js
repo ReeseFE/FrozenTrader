@@ -80,10 +80,34 @@ export default function Home() {
 
             <section className={styles.section} id='section-1'>
                 <main className={styles.main}>
-                    <p className={styles.title}>
-                        A privacy-focused, easy-to-use quantitative research
-                        platform
-                    </p>
+                    <section className={styles.designSection}>
+                        <div className={styles.timeline}>
+                            <div className={styles.timelineEmpty}></div>
+                            <div className={styles.timelineMiddle}>
+                                <div className={styles.timelineCircle}></div>
+                            </div>
+                            <div className={`${styles.timelineComponent} ${styles.timelineContent}`}>
+                                <h3>Automatic data ETL pipeline</h3>
+                                <p>Automatic data ETL pipeline with Prefect</p>
+                            </div>
+                            <div className={`${styles.timelineComponent} ${styles.timelineContent}`}>
+                                <h3>CSS</h3>
+                                <p>Some Text.</p>
+                            </div>
+                            <div className={styles.timelineMiddle}>
+                                <div className={styles.timelineCircle}></div>
+                            </div>
+                            <div className={styles.timelineEmpty}></div>
+                            <div className={styles.timelineEmpty}></div>
+                            <div className={styles.timelineMiddle}>
+                                <div className={styles.timelineCircle}></div>
+                            </div>
+                            <div className={`${styles.timelineComponent} ${styles.timelineContent}`}>
+                                <h3>Javascript</h3>
+                                <p>Some Text.</p>
+                            </div>
+                        </div>
+                    </section>
                 </main>
             </section>
 
