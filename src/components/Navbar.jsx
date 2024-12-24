@@ -56,6 +56,42 @@ const MenuItem = styled('div')`
     }
 `;
 
+const NavButton = styled(Button)`
+    width: 9rem;
+    height: 2.8em;
+    margin-top: 1em;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: #83a5d582;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    color: #ffffff;
+
+    &:hover {
+        letter-spacing: 1px;
+        background-color: #ebd2c567;
+        color: #ffffff;
+        box-shadow: rgba(93, 122, 185, 0.796) 0px 7px 29px 0px;
+    }
+
+    &:active {
+        letter-spacing: 1px;
+        background-color: #83a5d582;
+        color: #ffffff;
+        box-shadow: rgba(11, 39, 122, 0.619) 0px 0px 0px 0px;
+        transform: translateY(10px);
+        transition: 100ms;
+    }
+
+    @media (max-width: 1000px) {
+        display: none;
+    }
+`;
+
 const RightMenu = () => {
     const [openMenu, setOpenMenu] = useState(null);
 
@@ -188,9 +224,9 @@ const RightMenu = () => {
                 <VerticalToggleButtons />
             </div>
             <Link href="/playground" passHref>
-                <Button className={styles.navbuttons}>
+                <NavButton>
                     <span>Go Live</span>
-                </Button>
+                </NavButton>
             </Link>
         </div>
     );
