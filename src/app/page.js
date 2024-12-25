@@ -2,7 +2,9 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
+import timelineStyles from './Timeline.module.css';
 import CountUpCard from '@/components/CountUpCard/CountUpCard.jsx';
+import Image from 'next/image';
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -80,29 +82,36 @@ export default function Home() {
 
             <section className={styles.section} id='section-1'>
                 <main className={styles.main}>
-                    <section className={styles.designSection}>
-                        <div className={styles.timeline}>
-                            <div className={styles.timelineEmpty}></div>
-                            <div className={styles.timelineMiddle}>
-                                <div className={styles.timelineCircle}></div>
+                    <Image
+                        alt="Data Illustration"
+                        src="/data.svg"
+                        width='500'
+                        height='250'
+                        className={timelineStyles.topImage}
+                    />
+                    <section className={timelineStyles.designSection}>
+                        <div className={timelineStyles.timeline}>
+                            <div className={timelineStyles.timelineEmpty}></div>
+                            <div className={timelineStyles.timelineMiddle}>
+                                <div className={timelineStyles.timelineCircle}></div>
                             </div>
-                            <div className={`${styles.timelineComponent} ${styles.timelineContent}`}>
+                            <div className={`${timelineStyles.timelineComponent} ${timelineStyles.timelineContent}`}>
                                 <h3>Automatic data ETL pipeline</h3>
                                 <p>Automatic data ETL pipeline with Prefect</p>
                             </div>
-                            <div className={`${styles.timelineComponent} ${styles.timelineContent}`}>
+                            <div className={`${timelineStyles.timelineComponent} ${timelineStyles.timelineContent}`}>
                                 <h3>CSS</h3>
                                 <p>Some Text.</p>
                             </div>
-                            <div className={styles.timelineMiddle}>
-                                <div className={styles.timelineCircle}></div>
+                            <div className={timelineStyles.timelineMiddle}>
+                                <div className={timelineStyles.timelineCircle}></div>
                             </div>
-                            <div className={styles.timelineEmpty}></div>
-                            <div className={styles.timelineEmpty}></div>
-                            <div className={styles.timelineMiddle}>
-                                <div className={styles.timelineCircle}></div>
+                            <div className={timelineStyles.timelineEmpty}></div>
+                            <div className={timelineStyles.timelineEmpty}></div>
+                            <div className={timelineStyles.timelineMiddle}>
+                                <div className={timelineStyles.timelineCircle}></div>
                             </div>
-                            <div className={`${styles.timelineComponent} ${styles.timelineContent}`}>
+                            <div className={`${timelineStyles.timelineComponent} ${timelineStyles.timelineContent}`}>
                                 <h3>Javascript</h3>
                                 <p>Some Text.</p>
                             </div>

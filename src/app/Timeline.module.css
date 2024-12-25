@@ -1,0 +1,69 @@
+.designSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  min-height: 100vh;
+  padding: 100px 0;
+}
+
+.timeline {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineContent {
+  padding: 20px;
+  background: #1f1f1f00;
+  box-shadow: 5px 5px 10px #54758f, -5px -5px 10px #242424;
+  border-radius: 5px;
+  color: ghostwhite;
+  transition: 0.4s ease;
+  overflow-wrap: break-word !important;
+}
+
+.timelineComponent {
+  margin: 0px 20px 20px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+    grid-auto-rows: min-content;
+  }
+  .timelineMiddle {
+    position: relative;
+    background-color: #e8e8e8;
+    width: 3px;
+    height: 30rem;
+  }
+  .timelineCircle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #4e98c9;
+    transform: translateX(-50%);
+  }
+}
+
+.topImage {
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  display: block;
+  width: 50rem;
+  height: auto;
+  z-index: 10;
+  margin-top: 10rem;
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
