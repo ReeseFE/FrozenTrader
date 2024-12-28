@@ -5,6 +5,7 @@ import styles from './page.module.css';
 import timelineStyles from './Timeline.module.css';
 import CountUpCard from '@/components/CountUpCard/CountUpCard.jsx';
 import Image from 'next/image';
+import { VisualDescription } from '@/constant/flipCard';
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -61,7 +62,7 @@ export default function Home() {
                             isButtonVisible ? styles.buttonVisible : ''
                         }`}
                     >
-                        <button className={styles.cssbuttons}>
+                        <button className={styles.mainbutton}>
                             <span>
                                 <svg
                                     viewBox='0 0 24 24'
@@ -82,13 +83,13 @@ export default function Home() {
 
             <section className={styles.section} id='section-1'>
                 <main className={styles.main}>
-                    <Image
+                    {/* <Image
                         alt="Data Illustration"
                         src="/data.svg"
                         width='500'
                         height='250'
                         className={timelineStyles.topImage}
-                    />
+                    /> */}
                     <section className={timelineStyles.designSection}>
                         <div className={timelineStyles.timeline}>
                             <div className={timelineStyles.timelineEmpty}></div>
@@ -121,12 +122,11 @@ export default function Home() {
             </section>
 
             <section className={styles.section} id='section-2'>
-                {/* Pricing section content */}
-                <main className={styles.main}>
-                    <p className={styles.title}>
-                        A privacy-focused, easy-to-use quantitative research
-                        platform
+                <main className="flex h-screen flex-col items-center justify-center p-24">
+                    <p className={styles.subtitle}>
+                        Beautiful Visualization Toolkit
                     </p>
+                    <VisualDescription />
                 </main>
             </section>
         </div>

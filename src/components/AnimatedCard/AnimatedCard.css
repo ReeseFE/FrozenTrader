@@ -1,0 +1,94 @@
+.animated-card-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  padding: 5rem 1rem;
+}
+
+.animated-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .animated-card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.animated-card-image-container {
+  position: relative;
+  height: 20rem;
+  width: 100%;
+}
+
+.animated-card-image {
+  position: absolute;
+  inset: 0;
+  transform-origin: bottom;
+}
+
+.animated-card-image-content {
+  height: 100%;
+  width: 100%;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.animated-card-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.animated-card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(223, 223, 229);
+}
+
+.animated-card-designation {
+  font-size: 0.875rem;
+  color: #858a95;
+}
+
+.animated-card-quote {
+  font-size: 1.125rem;
+  color: #999ea8;
+  margin-top: 2rem;
+}
+
+.animated-card-quote-word {
+  display: inline-block;
+}
+
+.animated-card-buttons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 3rem;
+}
+
+.animated-card-button {
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animated-card-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: black;
+  transition: transform 0.3s;
+}
+
+.animated-card-button:hover .animated-card-icon {
+  transform: rotate(12deg);
+} 
