@@ -91,6 +91,7 @@ export default function Home() {
                         height='250'
                         className={timelineStyles.topImage}
                     /> */}
+                    <CodeCompare />
                     <section className={timelineStyles.designSection}>
                         <div className={timelineStyles.timeline}>
                             <div className={timelineStyles.timelineEmpty}></div>
@@ -123,12 +124,11 @@ export default function Home() {
             </section>
 
             <section className={styles.section} id='section-2'>
-                <main className="flex h-screen flex-col items-center justify-center p-24">
+                <main className={styles.main}>
                     <p className={styles.subtitle}>
                         Beautiful Visualization Toolkit
                     </p>
                     <VisualDescription />
-                    <CodeCompare />
                 </main>
             </section>
         </div>
