@@ -6,6 +6,7 @@ import timelineStyles from './Timeline.module.css';
 import CountUpCard from '@/components/CountUpCard/CountUpCard.jsx';
 import Image from 'next/image';
 import { VisualDescription } from '@/constant/flipCard';
+import { CodeCompare } from '@/constant/codeBlock';
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -127,6 +128,7 @@ export default function Home() {
                         Beautiful Visualization Toolkit
                     </p>
                     <VisualDescription />
+                    <CodeCompare />
                 </main>
             </section>
         </div>

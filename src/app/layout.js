@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import Navbar from '@/components/Navbar.jsx';
+import Navbar from '../components/Navbar';
 
 import './globals.css';
 
