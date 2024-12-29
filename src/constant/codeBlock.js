@@ -1,17 +1,18 @@
 import React from "react";
 import { Compare } from "../components/CodeBlock/compare";
+import styles from "../components/CodeBlock/CodeCompare.module.css";
 
 export function CodeCompare() {
   return (
-    (<div
-      className="p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100  border-neutral-200 dark:border-neutral-800 px-4">
+    <div className={`${styles.codeCompareContainer} dark:${styles.darkMode} px-4`}>
       <Compare
         firstImage="./code1.png"
         secondImage="./code2.png"
         firstImageClassName="object-cover object-left-top"
         secondImageClassname="object-cover object-left-top"
         className="h-[250px] w-[200px] md:h-[500px] md:w-[500px]"
-        slideMode="hover" />
-    </div>)
+        slideMode="hover"
+      />
+    </div>
   );
 }
