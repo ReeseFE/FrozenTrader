@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
-import timelineStyles from './Timeline.module.css';
+import timelineStyles from '@/components/flow.module.css';
 import CountUpCard from '@/components/CountUpCard/CountUpCard.jsx';
 import Image from 'next/image';
 import { VisualDescription } from '@/constant/flipCard';

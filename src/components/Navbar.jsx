@@ -25,7 +25,7 @@ const BackgroundOverlay = styled('div')`
     width: 100%;
     height: 70px;
     background-color: rgba(33, 33, 33, 0.95);
-    z-index: 999; /* 确保在其他内容之上 */
+    z-index: 1000; /* 确保在其他内容之上 */
     transition: transform 0.3s ease, opacity 0.3s ease;
 `;
 
@@ -113,7 +113,7 @@ const RightMenu = () => {
             }}
         >
             <div className={styles.menuContainer}>
-                {Object.keys(menuData).map((menu) => (
+                {Object.entries(menuData).map(([menu, items]) => (
                     <MenuItem
                         key={menu}
                         onMouseEnter={() => handleMouseEnter(menu)}
@@ -175,46 +175,42 @@ const RightMenu = () => {
                             openMenu={openMenu}
                             menu={menu}
                         >
-                            {menuData[menu].map((item, index) => (
-                                <Box
-                                    key={index}
-                                    sx={{
-                                        borderRadius: '12px',
-                                        width: '100%',
-                                        padding: '0.7rem',
-                                        border: '1px solid transparent',
-                                        cursor: 'pointer',
-                                        transition: 'all 0.2s ease',
-                                        '&:hover': {
-                                            backgroundColor: '#1B1B1D',
-                                            border: '1px solid #2D2930',
-                                        },
-                                    }}
-                                    onClick={() => {
-                                        if (item.url) {
-                                            window.open(item.url, '_blank');
-                                        }
-                                    }}
-                                >
-                                    <Typography
-                                        variant='body1'
+                            {items.map((item, index) => (
+                                <Link href={item.url || '#'} key={index} passHref>
+                                    <Box
                                         sx={{
-                                            fontWeight: 'bold',
-                                            whiteSpace: 'nowrap',
+                                            borderRadius: '12px',
+                                            width: '100%',
+                                            padding: '0.7rem',
+                                            border: '1px solid transparent',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.2s ease',
+                                            '&:hover': {
+                                                backgroundColor: '#1B1B1D',
+                                                border: '1px solid #2D2930',
+                                            },
                                         }}
                                     >
-                                        {item.title}
-                                    </Typography>
-                                    <Typography
-                                        variant='body2'
-                                        sx={{
-                                            color: 'gray',
-                                            whiteSpace: 'nowrap',
-                                        }}
-                                    >
-                                        {item.description}
-                                    </Typography>
-                                </Box>
+                                        <Typography
+                                            variant='body1'
+                                            sx={{
+                                                fontWeight: 'bold',
+                                                whiteSpace: 'nowrap',
+                                            }}
+                                        >
+                                            {item.title}
+                                        </Typography>
+                                        <Typography
+                                            variant='body2'
+                                            sx={{
+                                                color: 'gray',
+                                                whiteSpace: 'nowrap',
+                                            }}
+                                        >
+                                            {item.description}
+                                        </Typography>
+                                    </Box>
+                                </Link>
                             ))}
                         </CustomPopoverContent>
                     </MenuItem>

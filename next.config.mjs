@@ -1,6 +1,9 @@
 import MonacoWebpackPlugin from 'monaco-editor-webpack-plugin';
 
 const nextConfig = {
+  images: {
+    domains: ['assets.aceternity.com'], // Add the external hostname here
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.plugins.push(

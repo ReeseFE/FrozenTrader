@@ -26,9 +26,18 @@ const menuData = {
   'About Frozen': [
     {
       title: 'About Us',
-      description: 'Learn about our visions and team ethos.'
+      description: 'Learn about our visions and team ethos.',
+      url: '/aboutus'
     },
-    { title: 'Contact', description: 'Get in touch with our executive team.' },
+    {
+      title: 'Roadmap',
+      description: 'Explore our past development stages.',
+      url: '/roadmap'
+    },
+    {
+      title: 'Contact',
+      description: 'Get in touch with our executive team.'
+    },
     {
       title: 'Legal',
       description: 'Learn about our legal terms and policies.',
