@@ -2,11 +2,10 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
-import timelineStyles from '@/components/flow.module.css';
-import CountUpCard from '@/components/CountUpCard/CountUpCard.jsx';
-import Image from 'next/image';
+import CountUpCard from '@/components/CountUpCard/CountUpCard';
 import { VisualDescription } from '@/constant/flipCard';
 import { CodeCompare } from '@/constant/codeBlock';
+import { FeatureCard } from '@/components/FeatureCard/FeatureCard';
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -82,44 +81,10 @@ export default function Home() {
                 </main>
             </section>
 
-            <section className={styles.section} id='section-1'>
-                <main className={styles.main}>
-                    {/* <Image
-                        alt="Data Illustration"
-                        src="/data.svg"
-                        width='500'
-                        height='250'
-                        className={timelineStyles.topImage}
-                    /> */}
+            <section id='section-1'>
+                <main>
                     <CodeCompare />
-                    <section className={timelineStyles.designSection}>
-                        <div className={timelineStyles.timeline}>
-                            <div className={timelineStyles.timelineEmpty}></div>
-                            <div className={timelineStyles.timelineMiddle}>
-                                <div className={timelineStyles.timelineCircle}></div>
-                            </div>
-                            <div className={`${timelineStyles.timelineComponent} ${timelineStyles.timelineContent}`}>
-                                <h3>Automatic data ETL pipeline</h3>
-                                <p>Automatic data ETL pipeline with Prefect</p>
-                            </div>
-                            <div className={`${timelineStyles.timelineComponent} ${timelineStyles.timelineContent}`}>
-                                <h3>CSS</h3>
-                                <p>Some Text.</p>
-                            </div>
-                            <div className={timelineStyles.timelineMiddle}>
-                                <div className={timelineStyles.timelineCircle}></div>
-                            </div>
-                            <div className={timelineStyles.timelineEmpty}></div>
-                            <div className={timelineStyles.timelineEmpty}></div>
-                            <div className={timelineStyles.timelineMiddle}>
-                                <div className={timelineStyles.timelineCircle}></div>
-                            </div>
-                            <div className={`${timelineStyles.timelineComponent} ${timelineStyles.timelineContent}`}>
-                                <h3>Javascript</h3>
-                                <p>Some Text.</p>
-                            </div>
-                        </div>
-                    </section>
+                    <FeatureCard />
                 </main>
             </section>
 
