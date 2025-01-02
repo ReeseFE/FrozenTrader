@@ -31,10 +31,12 @@ export const FeatureCard = () => {
   return (
     <div
       id="features"
-      className="px-4 bg-transparent py-20 md:py-40 relative group"
+      className="px-4 bg-transparent py-20 md:pt-40 md:pb-20 relative group"
       onMouseMove={onMouseMove}
     >
-      <div className="absolute w-96 h-96 -left-20 -top-20 bg-gradient-to-t from-[#9890e3] to-[#b1f4cf] blur-3xl rounded-full opacity-20" />
+      {/* add halo effect */}
+      {/* bg-gradient-to-t from-[#9890e3] to-[#b1f4cf] blur-3xl rounded-full opacity-20 */}
+      <div className="absolute w-96 h-96 -left-20 -top-20" />
       <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
         <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
           Automatic Quantitative Research Workflow

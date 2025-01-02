@@ -81,15 +81,15 @@ export default function Home() {
                 </main>
             </section>
 
-            <section id='section-1'>
-                <main>
-                    <CodeCompare />
+            <section className={styles.section} id='section-1'>
+                <div className='container w-full'>
                     <FeatureCard />
-                </main>
+                </div>
             </section>
 
             <section className={styles.section} id='section-2'>
                 <main className={styles.main}>
+                    <CodeCompare />
                     <p className={styles.subtitle}>
                         Beautiful Visualization Toolkit
                     </p>
