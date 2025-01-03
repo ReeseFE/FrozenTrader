@@ -6,6 +6,7 @@ import CountUpCard from '@/components/CountUpCard/CountUpCard';
 import { VisualDescription } from '@/constant/flipCard';
 import { CodeCompare } from '@/constant/codeBlock';
 import { FeatureCard } from '@/components/FeatureCard/FeatureCard';
+import { Footer } from '@/components/footer/footer';
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -95,6 +96,10 @@ export default function Home() {
                     </p>
                     <VisualDescription />
                 </main>
+            </section>
+
+            <section className={styles.section} id='section-3'>
+                <Footer />
             </section>
         </div>
     );
