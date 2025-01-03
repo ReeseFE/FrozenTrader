@@ -89,16 +89,14 @@ export default function Home() {
             </section>
 
             <section className={styles.section} id='section-2'>
-                <main className={styles.main}>
-                    <CodeCompare />
-                    <p className={styles.subtitle}>
-                        Beautiful Visualization Toolkit
-                    </p>
-                    <VisualDescription />
-                </main>
+                <VisualDescription />
             </section>
 
             <section className={styles.section} id='section-3'>
+                <CodeCompare />
+            </section>
+
+            <section className={styles.section} id='section-4'>
                 <Footer />
             </section>
         </div>

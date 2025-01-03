@@ -31,7 +31,7 @@ export const FeatureCard = () => {
   return (
     <div
       id="features"
-      className="px-4 bg-transparent py-20 md:pt-40 md:pb-20 relative group"
+      className="px-4 bg-transparent py-20 md:pt-40 md:pb-5 relative group"
       onMouseMove={onMouseMove}
     >
       {/* add halo effect */}

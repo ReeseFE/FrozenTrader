@@ -192,8 +192,9 @@
     grid-template-columns: repeat(1, 260px);
     grid-template-rows: repeat(3, 100px); /* 仅在窄屏上应用 */
   }
-  .cssbuttons {
-    min-width: 180px;
+  .mainbutton {
+    min-width: 170px;
+    font-size: 17px;
   }
 }
 
