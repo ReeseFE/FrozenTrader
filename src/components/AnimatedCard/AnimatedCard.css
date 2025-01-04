@@ -38,6 +38,15 @@
   object-position: center;
 }
 
+@media (max-width: 768px) {
+  .animated-card-image-content {
+    height: 100%;
+    width: 450px;
+    min-width: 400px;
+    margin: 0 auto;
+  }
+}
+
 .animated-card-text-container {
   display: flex;
   flex-direction: column;

@@ -7,7 +7,7 @@ import { VisualDescription } from '@/constant/flipCard';
 import { CodeCompare } from '@/constant/codeBlock';
 import { FeatureCard } from '@/components/FeatureCard/FeatureCard';
 import { Footer } from '@/components/footer/footer';
-import { Stacks } from '@/components/stack/stack';
+import { Stacks } from '@/components/LogoCloud/stack';
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -90,6 +90,11 @@ export default function Home() {
             </section>
 
             <section className={styles.section} id='section-2'>
+                {/* <div className="flex flex-col items-center">
+                    <p className={styles.subtitle}>
+                        Beautiful Visualization Toolkit
+                    </p>
+                </div> */}
                 <VisualDescription />
             </section>
 

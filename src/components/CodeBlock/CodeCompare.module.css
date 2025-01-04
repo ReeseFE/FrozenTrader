@@ -1,16 +1,12 @@
 .codeCompareContainer {
-  /* width: 100%;
-  max-width: 600px;
-  height: auto;
-  margin: 0 auto; */
   padding: 1rem;
-  border: 1px solid #4d4d4d77; /* Equivalent to border-neutral-200 */
-  border-radius: 1.5rem; /* Equivalent to rounded-3xl */
-  background-color: #4d4d4d77; /* Equivalent to bg-neutral-700 */
-  color: rgb(255, 255, 255); /* Text color for contrast */
+  border: 1px solid #4d4d4d77;
+  border-radius: 1.5rem;
+  background-color: #4d4d4d77;
+  color: rgb(255, 255, 255);
 }
 
 .darkMode {
-  background-color: rgb(17, 24, 39); /* Equivalent to dark:bg-neutral-900 */
-  border-color: rgb(31, 41, 55); /* Equivalent to dark:border-neutral-800 */
-} 
+  background-color: rgb(17, 24, 39);
+  border-color: rgb(31, 41, 55);
+}
