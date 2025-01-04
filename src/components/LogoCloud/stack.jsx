@@ -8,11 +8,11 @@ export const Stacks = () => {
   let [logos, setLogos] = useState([
     {
       title: "python",
-      src: "/logos/python.svg",
+      src: "/logos/python.png",
     },
     {
       title: "numpy",
-      src: "/logos/numpy.svg",
+      src: "/logos/numpy.png",
     },
     {
       title: "numba",
@@ -20,11 +20,11 @@ export const Stacks = () => {
     },
     {
       title: "pandas",
-      src: "/logos/pandas.svg",
+      src: "/logos/pandas.png",
     },
     {
       title: "pytorch",
-      src: "/logos/pytorch.svg",
+      src: "/logos/pytorch.png",
     },
     {
       title: "mlflow",
@@ -44,11 +44,11 @@ export const Stacks = () => {
     },
     {
       title: "prefect",
-      src: "/logos/prefect.svg",
+      src: "/logos/prefect.png",
     },
     {
       title: "mysql",
-      src: "/logos/mysql.svg",
+      src: "/logos/mysql.png",
     },
     {
       title: "clickhouse",
@@ -60,7 +60,7 @@ export const Stacks = () => {
     },
     {
       title: "streamlit",
-      src: "/logos/streamlit.svg",
+      src: "/logos/streamlit.png",
     },
     {
       title: "vercel",
@@ -68,7 +68,7 @@ export const Stacks = () => {
     },
     {
       title: "tailwind-css",
-      src: "/logos/tailwindcss.svg",
+      src: "/logos/tailwindcss.png",
     },
     {
       title: "react",
@@ -76,15 +76,15 @@ export const Stacks = () => {
     },
     {
         title: "flask",
-        src: "/logos/flask.svg",
+        src: "/logos/flask.png",
     },
     {
       title: "nginx",
-      src: "/logos/nginx.svg",
+      src: "/logos/nginx.png",
     },
     {
       title: "docker",
-      src: "/logos/docker.svg",
+      src: "/logos/docker.png",
     },
     {
       title: "github",
@@ -92,11 +92,11 @@ export const Stacks = () => {
     },
   ]);
   return (
-    <div className="pt-20 pb-40 h-40">
+    <div className="pt-20 pb-40 h-45">
       <p className="text-neutral-400 text-center mb-4 text-sm sm:text-base md:text-lg lg:text-xl break-words whitespace-normal w-full">
         Support integration with multiple technology stacks
       </p>
-      <div className="flex flex-wrap justify-center gap-4 max-w-7xl mx-auto relative pt-10 h-30">
+      <div className="flex flex-wrap justify-center gap-4 max-w-7xl mx-auto relative pt-10 h-40">
         <div className="absolute inset-0 bg-charcoal grayscale z-40 pointer-events-none [mask-image:_radial-gradient(circle,_transparent_10%,_#000000_100%)]" />
         <Marquee>
           {logos.map((logo, idx) => (
