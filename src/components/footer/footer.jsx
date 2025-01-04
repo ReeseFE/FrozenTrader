@@ -129,8 +129,8 @@ import { menuData } from "@/constant/homePage";
 
 export function Footer() {
   return (
-    <div className="border-t border-neutral-100 dark:border-white/[0.1] px-8 py-20 bg-white dark:bg-neutral-950 w-full relative overflow-hidden">
-      <div className="max-w-7xl mx-auto text-sm text-neutral-500 flex sm:flex-row flex-col justify-between items-start md:px-8">
+    <div className="border-t border-[#212121] light:border-black/[0.1] px-8 py-20 bg-[#212121] dark:bg-neutral-950 w-full relative overflow-hidden">
+      <div className="max-w-7xl mx-auto text-sm text-neutral-400 flex sm:flex-row flex-col justify-between items-start md:px-8">
         <div>
           <div className="mr-0 md:mr-4 md:flex mb-4">
             <Logo />
@@ -142,10 +142,10 @@ export function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 items-start mt-10 sm:mt-0 md:mt-0">
           {Object.entries(menuData).map(([category, links]) => (
             <div key={category} className="flex justify-center space-y-4 flex-col w-full">
-              <p className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 font-bold">
+              <p className="transition-colors hover:text-text-neutral-800 text-neutral-300 light:text-neutral-600 font-bold">
                 {category}
               </p>
-              <ul className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 list-none space-y-4">
+              <ul className="transition-colors hover:text-text-neutral-800 text-neutral-500 light:text-neutral-600 list-none space-y-4">
                 {links.map((link, idx) => (
                   <li key={`${category}-${idx}`} className="list-none">
                     <Link

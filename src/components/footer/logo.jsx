@@ -9,12 +9,12 @@ export const Logo = () => {
       className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20"
     >
       <Image
-        src="/logo_original.svg"
+        src="/logo_white.svg"
         alt="logo"
         width={30}
         height={30}
       />
-      <span className="font-medium text-black dark:text-white">FROZEN</span>
+      <span className="font-medium text-[#e8e8e8] light:text-black">FROZEN</span>
     </Link>
   );
 };
