@@ -27,6 +27,7 @@ const BackgroundOverlay = styled('div')`
     background-color: rgba(33, 33, 33, 0.95);
     z-index: 1000; /* 确保在其他内容之上 */
     transition: transform 0.3s ease, opacity 0.3s ease;
+    backdrop-filter: blur(5px); /* 添加模糊效果 */
 `;
 
 const CustomPopoverContent = styled('div')(({ openMenu, menu }) => ({
