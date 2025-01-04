@@ -3,18 +3,18 @@ import { AnimatedTestimonials } from "@/components/AnimatedCard/AnimatedCard";
 export function VisualDescription() {
   const testimonials = [
     {
-        quote:
-          "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-        name: "Backtest Result",
-        designation: "CTO at InnovateSphere",
-        src: "/visualize/port_pnl.png",
-    },
-    {
       quote:
         "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
       name: "Parameter Tuning",
       designation: "The best way to find the best parameter",
       src: "/visualize/tuning.png",
+    },
+    {
+        quote:
+          "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
+        name: "Backtest Result",
+        designation: "CTO at InnovateSphere",
+        src: "/visualize/port_pnl.png",
     },
     {
       quote:
