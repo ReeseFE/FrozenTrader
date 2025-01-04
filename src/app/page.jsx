@@ -8,6 +8,7 @@ import { CodeCompare } from '@/constant/codeBlock';
 import { FeatureCard } from '@/components/FeatureCard/FeatureCard';
 import { Footer } from '@/components/footer/footer';
 import { Stacks } from '@/components/LogoCloud/stack';
+import { TextRevealCardPreview } from '@/constant/textRevealCard';
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -101,6 +102,7 @@ export default function Home() {
             <section className={styles.section} id='section-3'>
                 <main className={styles.main}>
                     <CodeCompare />
+                    <TextRevealCardPreview />
                     <Stacks />
                 </main>
             </section>
