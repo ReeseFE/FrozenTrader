@@ -7,6 +7,7 @@ import { VisualDescription } from '@/constant/flipCard';
 import { CodeCompare } from '@/constant/codeBlock';
 import { FeatureCard } from '@/components/FeatureCard/FeatureCard';
 import { Footer } from '@/components/footer/footer';
+import { Stacks } from '@/components/stack/stack';
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -93,7 +94,10 @@ export default function Home() {
             </section>
 
             <section className={styles.section} id='section-3'>
-                <CodeCompare />
+                <main className={styles.main}>
+                    <CodeCompare />
+                    <Stacks />
+                </main>
             </section>
 
             <section className={styles.section} id='section-4'>
