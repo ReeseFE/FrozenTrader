@@ -9,6 +9,8 @@ import { FeatureCard } from '@/components/FeatureCard/FeatureCard';
 import { Footer } from '@/components/footer/footer';
 import { Stacks } from '@/components/LogoCloud/stack';
 import { TextRevealCardPreview } from '@/constant/textRevealCard';
+import { FocusCardsPreview } from '@/constant/focusCard';
+import { ModuleCard } from '@/components/ModuleCard';
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -84,13 +86,21 @@ export default function Home() {
                 </main>
             </section>
 
-            <section className={styles.section} id='section-1'>
+            {/* <section className={styles.section} id='section-1'>
                 <div className='container w-full'>
                     <FeatureCard />
                 </div>
+            </section> */}
+
+            <section className={styles.section} id='section-1'>
+                <ModuleCard />
             </section>
 
             <section className={styles.section} id='section-2'>
+                <FocusCardsPreview />
+            </section>
+
+            <section className={styles.section} id='section-3'>
                 {/* <div className="flex flex-col items-center">
                     <p className={styles.subtitle}>
                         Beautiful Visualization Toolkit
@@ -99,7 +109,7 @@ export default function Home() {
                 <VisualDescription />
             </section>
 
-            <section className={styles.section} id='section-3'>
+            <section className={styles.section} id='section-4'>
                 <main className={styles.main}>
                     <CodeCompare />
                     <TextRevealCardPreview />
@@ -107,7 +117,7 @@ export default function Home() {
                 </main>
             </section>
 
-            <section className={styles.section} id='section-4'>
+            <section className={styles.section} id='section-5'>
                 <Footer />
             </section>
         </div>

@@ -1,6 +1,6 @@
 import { useMotionTemplate, motion } from "framer-motion";
 import React from "react";
-import { GridPattern } from "./GridPattern";
+import { GridPattern } from "../GridPattern";
 
 export function CardPattern({ mouseX, mouseY, ...gridProps }) {
   let maskImage = useMotionTemplate`radial-gradient(300px at ${mouseX}px ${mouseY}px, white, transparent)`;
