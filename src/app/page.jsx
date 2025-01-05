@@ -9,7 +9,6 @@ import { FeatureCard } from '@/components/FeatureCard/FeatureCard';
 import { Footer } from '@/components/footer/footer';
 import { Stacks } from '@/components/LogoCloud/stack';
 import { TextRevealCardPreview } from '@/constant/textRevealCard';
-import { FocusCardsPreview } from '@/constant/focusCard';
 import { ModuleCard } from '@/components/ModuleCard';
 
 export default function Home() {
@@ -97,10 +96,6 @@ export default function Home() {
             </section>
 
             <section className={styles.section} id='section-2'>
-                <FocusCardsPreview />
-            </section>
-
-            <section className={styles.section} id='section-3'>
                 {/* <div className="flex flex-col items-center">
                     <p className={styles.subtitle}>
                         Beautiful Visualization Toolkit
@@ -109,7 +104,7 @@ export default function Home() {
                 <VisualDescription />
             </section>
 
-            <section className={styles.section} id='section-4'>
+            <section className={styles.section} id='section-3'>
                 <main className={styles.main}>
                     <CodeCompare />
                     <TextRevealCardPreview />
@@ -117,7 +112,7 @@ export default function Home() {
                 </main>
             </section>
 
-            <section className={styles.section} id='section-5'>
+            <section className={styles.section} id='section-4'>
                 <Footer />
             </section>
         </div>
