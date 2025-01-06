@@ -1,20 +1,55 @@
 "use client";
 import { modules } from "@/constant/module";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
-import React from "react";
+import { motion, useMotionTemplate, useMotionValue, useAnimation } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import { GridPattern } from "./GridPattern";
 
 export const ModuleCard = () => {
+  const controls = useAnimation();
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start("visible");
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    return () => {
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
+    };
+  }, [controls]);
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div id="modules" className="max-w-7xl mx-auto py-10 md:py-20 px-12">
-      <div className="mx-auto max-w-2xl sm:text-center pt-20">
+      <motion.div
+        ref={titleRef}
+        initial="hidden"
+        animate={controls}
+        variants={titleVariants}
+        className="mx-auto max-w-2xl sm:text-center pt-20"
+      >
         <h2 className="text-3xl font-medium text-[ghostwhite]">
           Automatic Quantitative Research Workflow
         </h2>
         <p className="mt-2 text-lg text-gray-500">
           We provide a rich set of loose-coupled modules for traditional quantitative research workflow.
         </p>
-      </div>
+      </motion.div>
       <ul className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3">
         {modules.map((module, idx) => (
           <Module key={`module-${idx}`} module={module} />
@@ -25,6 +60,35 @@ export const ModuleCard = () => {
 };
 
 const Module = ({ module }) => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start("visible");
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [controls]);
+
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
 
@@ -35,9 +99,13 @@ const Module = ({ module }) => {
   }
 
   return (
-    <li
+    <motion.li
+      ref={ref}
       onMouseMove={onMouseMove}
       className="group rounded-2xl border p-8 relative bg-[#C0CDDE05] text-blue-100"
+      initial="hidden"
+      animate={controls}
+      variants={variants}
     >
       <ModulePattern {...module.pattern} mouseX={mouseX} mouseY={mouseY} />
       <div className="relative z-10">
@@ -45,7 +113,7 @@ const Module = ({ module }) => {
         <h3 className="mt-6 font-semibold">{module.title}</h3>
         <p className="mt-2">{module.description}</p>
       </div>
-    </li>
+    </motion.li>
   );
 };
 
