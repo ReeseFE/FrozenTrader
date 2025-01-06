@@ -1,6 +1,6 @@
 "use client";;
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { SparklesCore } from "./sparkles";
+import { SparklesCore } from "@/components/sparkles";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/utils/util";
 import { IconDotsVertical } from "@tabler/icons-react";

@@ -10,6 +10,8 @@ import { Footer } from '@/components/footer/footer';
 import { Stacks } from '@/components/LogoCloud/stack';
 import { TextRevealCardPreview } from '@/constant/textRevealCard';
 import { ModuleCard } from '@/components/ModuleCard';
+import { Features } from "@/components/features";
+import { GridView } from "@/components/GridView";
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -94,6 +96,14 @@ export default function Home() {
             <section className={styles.section} id='section-1'>
                 <ModuleCard />
             </section>
+
+            <section className={styles.section} id='section-1.5'>
+                <Features />
+            </section>
+{/* 
+            <section className={styles.section} id='section-1.6'>
+                <GridView />
+            </section> */}
 
             <section className={styles.section} id='section-2'>
                 {/* <div className="flex flex-col items-center">
