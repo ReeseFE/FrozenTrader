@@ -101,10 +101,6 @@ export default function Home() {
             <section className={styles.section} id='section-1.5'>
                 <Features />
             </section>
-            
-            <section className={styles.section} id='section-1.6'>
-                <MacbookScroll src={`/main.png`} showGradient={true} />
-            </section>
 
             {/* <section className={styles.section} id='section-1.6'>
                 <GridView />
@@ -122,9 +118,16 @@ export default function Home() {
             <section className={styles.section} id='section-3'>
                 <main className={styles.main}>
                     <CodeCompare />
-                    <TextRevealCardPreview />
                     <Stacks />
                 </main>
+            </section>
+
+            <section className={styles.section} id='section-3.1'>
+                <TextRevealCardPreview />
+            </section>
+
+            <section className={styles.section} id='section-3.2'>
+                <MacbookScroll src={`/main.png`} showGradient={true} />
             </section>
 
             <section className={styles.section} id='section-4'>
