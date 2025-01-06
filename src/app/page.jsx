@@ -12,6 +12,7 @@ import { TextRevealCardPreview } from '@/constant/textRevealCard';
 import { ModuleCard } from '@/components/ModuleCard';
 import { Features } from "@/components/features";
 import { GridView } from "@/components/GridView";
+import { MacbookScroll } from "@/components/macbook";
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -100,8 +101,12 @@ export default function Home() {
             <section className={styles.section} id='section-1.5'>
                 <Features />
             </section>
-{/* 
+            
             <section className={styles.section} id='section-1.6'>
+                <MacbookScroll src={`/main.png`} showGradient={true} />
+            </section>
+
+            {/* <section className={styles.section} id='section-1.6'>
                 <GridView />
             </section> */}
 
