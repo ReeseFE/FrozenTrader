@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { GridPattern } from "./grid-pattern";
+import { GridPattern } from "@/components/features/grid-pattern";
 
 export const Grid = ({ pattern, size }) => {
   const p = pattern ?? [

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 
 export const MetaIcon = ({ className }) => {
   return (
@@ -409,5 +410,33 @@ export const MetaIconOutline = ({ className }) => {
         d="M82.35,31.23c-12.27,0-22.69,8.61-31.41,21.78C38.61,71.62,31.06,99.34,31.06,126c0,11,2.41,19.41,5.56,24.51L10.14,167.91C3.34,156.6,0,141.76,0,124.85,0,94.1,8.44,62.05,24.49,37.3,38.73,15.35,59.28,0,82.85,0Z"
       />
     </svg>
+  );
+};
+
+export const AlltickLogo = ({ className }) => {
+  return (
+    <div className={className}>
+      <Image
+        src="/provider-logos/alltick.png"
+        alt="Alltick Logo"
+        width={64}
+        height={64}
+        className="object-contain"
+      />
+    </div>
+  );
+};
+
+export const WadituLogo = ({ className }) => {
+  return (
+    <div className={className}>
+      <Image
+        src="/provider-logos/waditu.png"
+        alt="Waditu Logo"
+        width={64}
+        height={64}
+        className="object-contain"
+      />
+    </div>
   );
 };

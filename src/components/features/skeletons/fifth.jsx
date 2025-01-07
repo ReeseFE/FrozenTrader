@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { cn } from "../../../utils/util";
+import { cn } from "@/utils/util";
 import Image from "next/image";
 
 export const SkeletonFive = () => {

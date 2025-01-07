@@ -1,4 +1,4 @@
-import { cn } from "../../utils/util";
+import { cn } from "@/utils/util";
 import React from "react";
 
 export const Card = ({ className, children }) => {

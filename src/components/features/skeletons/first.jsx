@@ -8,15 +8,18 @@ import {
   SlackIcon,
   TiktokIcon,
   TwitterIcon,
-} from "../../icons/illustrations";
+  AlltickLogo,
+  WadituLogo,
+} from "@/components/icons/illustrations";
 import React from "react";
-import { IconContainer } from "../icon-container";
+import { IconContainer } from "@/components/features/icon-container";
+import { CodeCompare } from '@/constant/codeBlock';
 
 export const SkeletonOne = () => {
   return (
     <div className="p-8 overflow-hidden h-full">
       <div className="flex flex-col gap-4 items-center justify-center h-full relative">
-        <div className="flex gap-4 items-center justify-center flex-shrink-0">
+        <div className="flex gap-4 items-center justify-center flex-shrink-0"> d
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="62"
@@ -109,25 +112,13 @@ export const SkeletonOne = () => {
           </svg>
 
           <IconContainer>
-            <InstagramIcon />
-          </IconContainer>
-          <IconContainer>
-            <TiktokIcon />
-          </IconContainer>
-          <IconContainer>
             <TwitterIcon />
           </IconContainer>
           <IconContainer>
             <FacebookIcon />
           </IconContainer>
           <IconContainer>
-            <MetaIcon />
-          </IconContainer>
-          <IconContainer>
             <LinkedInIcon />
-          </IconContainer>
-          <IconContainer>
-            <SlackIcon />
           </IconContainer>
         </div>
         <div className="flex gap-4 items-center justify-center flex-shrink-0 ml-8">
@@ -138,19 +129,7 @@ export const SkeletonOne = () => {
             <LinkedInIcon />
           </IconContainer>
           <IconContainer>
-            <SlackIcon />
-          </IconContainer>
-          <IconContainer>
             <InstagramIcon />
-          </IconContainer>
-          <IconContainer>
-            <TiktokIcon />
-          </IconContainer>
-          <IconContainer>
-            <TwitterIcon />
-          </IconContainer>
-          <IconContainer>
-            <FacebookIcon />
           </IconContainer>
         </div>
       </div>

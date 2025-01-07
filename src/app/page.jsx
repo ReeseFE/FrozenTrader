@@ -5,13 +5,13 @@ import styles from './page.module.css';
 import CountUpCard from '@/components/CountUpCard/CountUpCard';
 import { VisualDescription } from '@/constant/flipCard';
 import { CodeCompare } from '@/constant/codeBlock';
-import { FeatureCard } from '@/components/FeatureCard/FeatureCard';
+// import { FeatureCard } from '@/components/FeatureCard/FeatureCard';
 import { Footer } from '@/components/footer/footer';
 import { Stacks } from '@/components/LogoCloud/stack';
 import { TextRevealCardPreview } from '@/constant/textRevealCard';
 import { ModuleCard } from '@/components/ModuleCard';
 import { Features } from "@/components/features";
-import { GridView } from "@/components/GridView";
+// import { GridView } from "@/components/GridView";
 import { MacbookScroll } from "@/components/macbook";
 
 export default function Home() {

@@ -1,6 +1,6 @@
 "use client";
 import React, { useId } from "react";
-import { cn } from "../../../utils/util";
+import { cn } from "@/utils/util";
 
 export const SkeletonFour = () => {
   return (
