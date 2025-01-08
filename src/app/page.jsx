@@ -11,7 +11,7 @@ import { Stacks } from '@/components/LogoCloud/stack';
 import { TextRevealCardPreview } from '@/constant/textRevealCard';
 import { ModuleCard } from '@/components/ModuleCard';
 import { Features } from "@/components/features";
-// import { GridView } from "@/components/GridView";
+import { GridView } from "@/components/GridView";
 import { MacbookScroll } from "@/components/macbook";
 
 export default function Home() {
@@ -46,47 +46,46 @@ export default function Home() {
 
     return (
         <div className={styles.container}>
-            <section className={styles.section} id='section-0'>
-                <main className={styles.main}>
-                    <p className={styles.title}>
-                        A privacy-focused, easy-to-use quantitative research
-                        platform
-                    </p>
-                    <p className={styles.desc}>
-                        Trade any equity assets in one platform. Event-driven
-                        backtests on any historical data. Live trading with no
-                        code changes.
-                    </p>
+          <section className={styles.section} id='section-0'>
+            <main className={styles.main}>
+              <p className={styles.title}>
+                A privacy-focused, easy-to-use quantitative research
+                platform
+              </p>
+              <p className={styles.desc}>
+                Trade any equity assets in one platform. Event-driven
+                backtests on any historical data. Live trading with no
+                code changes.
+              </p>
 
-                    <div className={styles.statsGrid}>
-                        <CountUpCard endValue={1000} title='Active Users' />
-                        <CountUpCard endValue={500} title='Daily Trades' />
-                        <CountUpCard endValue={50} title='Trading Strategies' />
-                    </div>
-                    <Link
-                        href='/playground'
-                        className={`${styles.button} ${
-                            isButtonVisible ? styles.buttonVisible : ''
-                        }`}
+              <div className={styles.statsGrid}>
+                <CountUpCard endValue={1000} title='Active Users' />
+                <CountUpCard endValue={500} title='Daily Trades' />
+                <CountUpCard endValue={50} title='Trading Strategies' />
+              </div>
+                <Link
+                  href='/playground'
+                  className={`${styles.button} ${                        isButtonVisible ? styles.buttonVisible : ''
+                  }`}
+                >
+                <button className={styles.mainbutton}>
+                  <span>
+                    <svg
+                      viewBox='0 0 24 24'
+                      xmlns='http://www.w3.org/2000/svg'
                     >
-                        <button className={styles.mainbutton}>
-                            <span>
-                                <svg
-                                    viewBox='0 0 24 24'
-                                    xmlns='http://www.w3.org/2000/svg'
-                                >
-                                    <path d='M0 0h24v24H0z' fill='none'></path>
-                                    <path
-                                        d='M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z'
-                                        fill='currentColor'
-                                    ></path>
-                                </svg>
-                                Dev Online
-                            </span>
-                        </button>
-                    </Link>
-                </main>
-            </section>
+                      <path d='M0 0h24v24H0z' fill='none'></path>
+                      <path
+                        d='M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z'
+                        fill='currentColor'
+                      ></path>
+                    </svg>
+                      Dev Online
+                  </span>
+                </button>
+                </Link>
+            </main>
+          </section>
 
             {/* <section className={styles.section} id='section-1'>
                 <div className='container w-full'>
@@ -94,45 +93,44 @@ export default function Home() {
                 </div>
             </section> */}
 
-            <section className={styles.section} id='section-1'>
-                <ModuleCard />
-            </section>
+          <section className={styles.section} id='section-1'>
+            <ModuleCard />
+          </section>
 
-            <section className={styles.section} id='section-1.5'>
-                <Features />
-            </section>
+          <section className={styles.section} id='section-1.5'>
+            <Features />
+          </section>
 
-            {/* <section className={styles.section} id='section-1.6'>
-                <GridView />
-            </section> */}
+          <section className={styles.section} id='section-1.6'>
+            <GridView />
+          </section>
 
-            <section className={styles.section} id='section-2'>
+          <section className={styles.section} id='section-2'>
                 {/* <div className="flex flex-col items-center">
                     <p className={styles.subtitle}>
                         Beautiful Visualization Toolkit
                     </p>
                 </div> */}
-                <VisualDescription />
-            </section>
+            <VisualDescription />
+          </section>
 
-            <section className={styles.section} id='section-3'>
-                <main className={styles.main}>
-                    <CodeCompare />
-                    <Stacks />
-                </main>
-            </section>
+          <section className={styles.section} id='section-3'>
+            <main className={styles.main}>
+              <Stacks />
+            </main>
+          </section>
 
-            <section className={styles.section} id='section-3.1'>
-                <TextRevealCardPreview />
-            </section>
+          <section className={styles.section} id='section-3.1'>
+            <TextRevealCardPreview />
+          </section>
 
-            <section className={styles.section} id='section-3.2'>
-                <MacbookScroll src={`/main.png`} showGradient={true} />
-            </section>
+          <section className={styles.section} id='section-3.2'>
+            <MacbookScroll src={`/main.png`} showGradient={true} />
+          </section>
 
-            <section className={styles.section} id='section-4'>
-                <Footer />
-            </section>
+          <section className={styles.section} id='section-4'>
+            <Footer />
+          </section>
         </div>
     );
 }
