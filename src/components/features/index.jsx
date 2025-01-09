@@ -18,6 +18,7 @@ import { SkeletonTwo } from "./skeletons/second";
 import { SkeletonThree } from "./skeletons/third";
 import { SkeletonFour } from "./skeletons/fourth";
 import { SkeletonFive } from "./skeletons/fifth";
+import { SkeletonSix } from "./skeletons/sixth";
 
 export const Features = () => {
   return (
@@ -59,41 +60,32 @@ export const Features = () => {
             <SkeletonThree />
           </CodeSkeletonContainer>
         </Card>
-        <Card className="lg:col-span-2">
+        <Card className="lg:col-span-3">
           <CardSkeletonContainer>
             <SkeletonFour />
           </CardSkeletonContainer>
-          <CardTitle>Integrated AI</CardTitle>
+          <CardTitle className="pt-8">Served on Edge</CardTitle>
           <CardDescription>
-            Proactiv uses AI to help you create engaging content.
+            Frozen is served on cloud to maintain perfect speed.
           </CardDescription>
         </Card>
-        <Card className="lg:col-span-5">
+        <Card className="lg:col-span-2">
           <CardSkeletonContainer>
             <SkeletonFive />
           </CardSkeletonContainer>
-          <CardTitle>Easy Collaboration</CardTitle>
+          <CardTitle className="pt-8">Integrated AI</CardTitle>
           <CardDescription>
-            Proactive can integrate with Zapier, Slack and every other popular
-            integration tools.
+            Frozen uses AI to help you create engaging content.
           </CardDescription>
         </Card>
-        <Card className="lg:col-span-5">
-          <CardSkeletonContainer>
-            <div className="w-full h-full p-4 rounded-lg bg-neutral-100 border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 ml-6 mt-2">
-                <Image
-                  src="/image/server.png"
-                  alt="Dashboard"
-                  width={500}
-                  height={500}
-                  className="w-full object-cover rounded-lg"
-                />
-              </div>
-          </CardSkeletonContainer>
-          <CardTitle>Know your audience</CardTitle>
+        <Card className="lg:col-span-2">
+          <CardTitle>Know your wealth</CardTitle>
           <CardDescription>
-            Based on your audience, create funnels and drive more traffic.
+            Frozen uses AI to help you create engaging content.
           </CardDescription>
+          <CardSkeletonContainer>
+            <SkeletonSix />
+          </CardSkeletonContainer>
         </Card>
       </div>
     </Container>
