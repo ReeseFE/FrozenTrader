@@ -50,3 +50,22 @@ export const CardSkeletonContainer = ({
     </div>
   );
 };
+
+export const CodeSkeletonContainer = ({
+  className,
+  children,
+  showGradient = true,
+}) => {
+  return (
+    <div
+      className={cn(
+        "rounded-xl z-40",
+        className,
+        showGradient &&
+          " bg-[rgba(40,40,40,0.30)] [mask-image:radial-gradient(70%_70%_at_50%_50%,white_0%,transparent_100%)]"
+      )}
+    >
+      {children}
+    </div>
+  );
+};

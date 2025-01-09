@@ -11,6 +11,7 @@ import {
   CardDescription,
   CardSkeletonContainer,
   CardTitle,
+  CodeSkeletonContainer,
 } from "./card";
 import { SkeletonOne } from "./skeletons/first";
 import { SkeletonTwo } from "./skeletons/second";
@@ -39,7 +40,7 @@ export const Features = () => {
           </CardSkeletonContainer>
         </Card>
         <Card className="lg:col-span-2">
-        <CardTitle>Post to multiple platforms at once</CardTitle>
+          <CardTitle>Post to multiple platforms at once</CardTitle>
           <CardDescription>
             With our AI-powered platform, you can post to multiple platforms
             at once, saving you time and effort.
@@ -49,14 +50,14 @@ export const Features = () => {
           </CardSkeletonContainer>
         </Card>
         <Card className="lg:col-span-3">
-          <CardSkeletonContainer className="max-w-[16rem] mx-auto">
-            <SkeletonThree />
-          </CardSkeletonContainer>
-          <CardTitle>Analytics for everything</CardTitle>
+        <CardTitle>Analytics for everything</CardTitle>
           <CardDescription>
             Check analytics, track your posts, and get insights into your
             audience.
           </CardDescription>
+          <CodeSkeletonContainer className="mx-auto">
+            <SkeletonThree />
+          </CodeSkeletonContainer>
         </Card>
         <Card className="lg:col-span-2">
           <CardSkeletonContainer>

@@ -10,7 +10,7 @@ export function CodeCompare() {
         secondImage="./code2.png"
         firstImageClassName="object-cover object-left-top"
         secondImageClassname="object-cover object-left-top"
-        className="h-[320px] w-[320px] md:h-[250px] md:w-[250px]"
+        className="h-[320px] w-[320px] md:h-[300px] md:w-[280px]"
         slideMode="hover"
       />
     </div>
