@@ -1,19 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
 import {
-  FacebookIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  MetaIcon,
-  SlackIcon,
-  TiktokIcon,
-  TwitterIcon,
+  TushareLogo,
+  YahooFinanceLogo,
+  BloombergLogo,
+  QmtLogo,
   AlltickLogo,
-  WadituLogo,
+  BinanceLogo,
+  WindLogo,
 } from "@/components/icons/illustrations";
 import React from "react";
 import { IconContainer } from "@/components/features/icon-container";
-import { CodeCompare } from '@/constant/codeBlock';
 
 export const SkeletonOne = () => {
   return (
@@ -112,24 +109,24 @@ export const SkeletonOne = () => {
           </svg>
 
           <IconContainer>
-            <TwitterIcon />
+            <YahooFinanceLogo />
           </IconContainer>
           <IconContainer>
-            <FacebookIcon />
+            <TushareLogo />
           </IconContainer>
           <IconContainer>
-            <LinkedInIcon />
+            <BloombergLogo />
           </IconContainer>
         </div>
         <div className="flex gap-4 items-center justify-center flex-shrink-0 ml-8">
           <IconContainer>
-            <MetaIcon />
+            <QmtLogo />
           </IconContainer>
           <IconContainer>
-            <LinkedInIcon />
+            <WindLogo />
           </IconContainer>
           <IconContainer>
-            <InstagramIcon />
+            <BinanceLogo />
           </IconContainer>
         </div>
       </div>

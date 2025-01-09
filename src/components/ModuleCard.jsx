@@ -44,7 +44,7 @@ export const ModuleCard = () => {
         className="mx-auto max-w-2xl sm:text-center pt-20"
       >
         <h2 className="text-3xl font-medium text-[ghostwhite]">
-          Automatic Quantitative Research Workflow
+          Modularized Design For Easy Customization
         </h2>
         <p className="mt-2 text-lg text-gray-500">
           We provide a rich set of loose-coupled modules for traditional quantitative research workflow.

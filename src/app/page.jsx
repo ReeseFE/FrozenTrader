@@ -4,15 +4,16 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import CountUpCard from '@/components/CountUpCard/CountUpCard';
 import { VisualDescription } from '@/constant/flipCard';
-import { CodeCompare } from '@/constant/codeBlock';
+// import { CodeCompare } from '@/constant/codeBlock';
 // import { FeatureCard } from '@/components/FeatureCard/FeatureCard';
 import { Footer } from '@/components/footer/footer';
 import { Stacks } from '@/components/LogoCloud/stack';
 import { TextRevealCardPreview } from '@/constant/textRevealCard';
 import { ModuleCard } from '@/components/ModuleCard';
 import { Features } from "@/components/features";
-import { GridView } from "@/components/GridView";
+// import { GridView } from "@/components/GridView";
 import { MacbookScroll } from "@/components/macbook";
+import { WorkflowImages } from "@/constant/workflow";
 
 export default function Home() {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -97,38 +98,38 @@ export default function Home() {
             <ModuleCard />
           </section>
 
-          <section className={styles.section} id='section-1.5'>
+          <section className={styles.section} id='section-2'>
             <Features />
           </section>
 
-          <section className={styles.section} id='section-1.6'>
-            <GridView />
+          <section className={styles.section} id='section-3'>
+            <WorkflowImages />
           </section>
 
-          <section className={styles.section} id='section-2'>
-                {/* <div className="flex flex-col items-center">
-                    <p className={styles.subtitle}>
-                        Beautiful Visualization Toolkit
-                    </p>
-                </div> */}
+          <section className={styles.section} id='section-4'>
+            {/* <div className="flex flex-col items-center">
+                <p className={styles.subtitle}>
+                    Beautiful Visualization Toolkit
+                </p>
+            </div> */}
             <VisualDescription />
           </section>
 
-          <section className={styles.section} id='section-3'>
+          <section className={styles.section} id='section-5'>
             <main className={styles.main}>
               <Stacks />
             </main>
           </section>
 
-          <section className={styles.section} id='section-3.1'>
+          <section className={styles.section} id='section-6'>
             <TextRevealCardPreview />
           </section>
 
-          <section className={styles.section} id='section-3.2'>
+          <section className={styles.section} id='section-7'>
             <MacbookScroll src={`/main.png`} showGradient={true} />
           </section>
 
-          <section className={styles.section} id='section-4'>
+          <section className={styles.section} id='section-8'>
             <Footer />
           </section>
         </div>

@@ -8,9 +8,8 @@ import { SparklesCore } from "@/components/sparkles";
 import {
   ClaudeLogo,
   GeminiLogo,
-  MetaIcon,
-  MetaIconOutline,
   OpenAILogo,
+  CursorLogo,
 } from "@/components/icons/illustrations";
 
 export const SkeletonFive = () => {
@@ -80,7 +79,7 @@ export const SkeletonFive = () => {
           <OpenAILogo className="h-8 w-8 " />
         </Container>
         <Container className="h-12 w-12 circle-4">
-          <MetaIconOutline className="h-6 w-6 " />
+          <CursorLogo className="h-6 w-6 " />
         </Container>
         <Container className="h-8 w-8 circle-5">
           <GeminiLogo className="h-4 w-4 " />
