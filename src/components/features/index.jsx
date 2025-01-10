@@ -1,11 +1,7 @@
 import React from "react";
-import Image from "next/image";
-import { GradientContainer } from "../gradient-container";
-import { Container } from "../container";
-import { Heading } from "../heading";
-import { Subheading } from "../subheading";
-import { FeatureIconContainer } from "./feature-icon-container";
-import { FaBolt, FaChartLine } from "react-icons/fa";
+import { Container } from "@/components/container";
+import { Heading } from "@/components/heading";
+import { Subheading } from "@/components/subheading";
 import {
   Card,
   CardDescription,

@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { TextComponent } from "@/components/Workflow";
+import { Heading } from "@/components/heading";
+import { Subheading } from "@/components/subheading";
 import { cn } from "@/utils/util";
 
 const data = [
@@ -55,19 +57,12 @@ export function WorkflowImages() {
 
   return (
     <div className="container">
-      <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-        <h2 className="text-3xl font-medium text-[ghostwhite] pt-20">
-          Automatic Quantitative Research Workflow
-        </h2>
-        <p className="mt-2 text-lg text-gray-500 pt-5 pb-20">
+      <div className="md:mx-auto md:text-center xl:max-w-none">
+        <Heading>Automatic Quantitative Research Workflow</Heading>
+        <Subheading>
           Build you own algorithmic trading strategy with our research pipeline. Easy deployment with only four steps.
-        </p>
+        </Subheading>
       </div>
-      {/* <div className="mb-20 text-center">
-        <h2 className="mb-4 text-3xl font-semibold tracking-tighter text-neutral-200 light:text-neutral-800">
-          Automatic Quantitative Research Workflow
-        </h2>
-      </div> */}
       <div className=" grid grid-cols-1 gap-4 md:grid-cols-2">
         <div className="space-y-6 ">
           {data.map((item, index) => (

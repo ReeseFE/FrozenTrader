@@ -2,7 +2,9 @@
 import { modules } from "@/constant/module";
 import { motion, useMotionTemplate, useMotionValue, useAnimation } from "framer-motion";
 import React, { useEffect, useRef } from "react";
-import { GridPattern } from "./GridPattern";
+import { GridPattern } from "@/components/GridPattern";
+import { Heading } from "@/components/heading";
+import { Subheading } from "@/components/subheading";
 
 export const ModuleCard = () => {
   const controls = useAnimation();
@@ -41,14 +43,12 @@ export const ModuleCard = () => {
         initial="hidden"
         animate={controls}
         variants={titleVariants}
-        className="mx-auto max-w-2xl sm:text-center pt-20"
+        className="mx-auto sm:text-center pt-20"
       >
-        <h2 className="text-3xl font-medium text-[ghostwhite]">
-          Modularized Design For Easy Customization
-        </h2>
-        <p className="mt-2 text-lg text-gray-500">
+        <Heading>Modularized Design For Easy Customization</Heading>
+        <Subheading>
           We provide a rich set of loose-coupled modules for traditional quantitative research workflow.
-        </p>
+        </Subheading>
       </motion.div>
       <ul className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3">
         {modules.map((module, idx) => (
