@@ -24,7 +24,7 @@ export const Features = () => {
         Frozen provides a robust infrastructure to enhance and support your research endeavors.
       </Subheading>
 
-      <div className="grid grid-cols-1 lg:grid-cols-7 gap-2 py-10 xs:px-8">
+      <div className="grid grid-cols-1 lg:grid-cols-7 gap-2 pt-10 md:pb-20 xs:pb-[50px] xs:px-8">
         <Card className="lg:col-span-2">
           <CardTitle>Integrate with different data sources</CardTitle>
           <CardDescription>
