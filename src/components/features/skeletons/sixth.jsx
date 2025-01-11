@@ -6,7 +6,7 @@ import Image from "next/image";
 export const SkeletonSix = () => {
   return (
     <div className="p-8 overflow-hidden h-full relative flex items-start justify-center">
-      <div className="flex absolute inset-0 flex-col group-hover:-translate-y-80 transition duration-200 items-center justify-center pt-20">
+      <div className="flex absolute inset-0 flex-col group-hover:-translate-y-80 transition duration-200 items-center justify-center pt-[50px]">
         <Container>
           <Image
             src="/image/head1.png"
@@ -17,10 +17,10 @@ export const SkeletonSix = () => {
           />
         </Container>
         <p className="mt-4 text-sm text-neutral-400 font-bold">Stock Account</p>
-        <div className="flex items-center gap-2 text-xs mt-4">
-          <p>Most engagements</p>
+        <div className="flex items-center gap-2 text-xs mt-4 text-neutral-300">
+          <p>Weekly returns</p>
           <div className="h-1 w-1 rounded-full bg-neutral-400" />
-          <p>69,420</p>
+          <p>6.05%</p>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ export const SkeletonSix = () => {
           />
         </svg>
       </div>
-      <div className="flex absolute inset-0 flex-col translate-y-80 group-hover:translate-y-0 transition duration-200 items-center justify-center">
+      <div className="flex absolute inset-0 flex-col translate-y-80 group-hover:translate-y-0 transition duration-200 items-center justify-center pt-[50px]">
         <Container>
           <Image
             src="/image/head2.png"
@@ -47,10 +47,10 @@ export const SkeletonSix = () => {
           />
         </Container>
         <p className="mt-4 text-sm text-neutral-400 font-bold">Crypto Account</p>
-        <div className="flex items-center gap-2 text-xs mt-4">
-          <p>Most engagements</p>
+        <div className="flex items-center gap-2 text-xs mt-4 text-neutral-300">
+          <p>Daily returns</p>
           <div className="h-1 w-1 rounded-full bg-neutral-400" />
-          <p>8008</p>
+          <p>1.17%</p>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
