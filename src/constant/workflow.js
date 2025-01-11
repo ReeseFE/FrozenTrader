@@ -57,10 +57,10 @@ export function WorkflowImages() {
 
   return (
     <div className="container">
-      <div className="md:mx-auto md:text-center xl:max-w-none">
+      <div className="md:mx-auto md:text-center md:max-w-7xl xl:max-w-none">
         <Heading>Automatic Quantitative Research Workflow</Heading>
         <Subheading>
-          Build you own algorithmic trading strategy with our research pipeline. Easy deployment with only four steps.
+          Build and deploy your own algorithmic trading strategy with only four steps.
         </Subheading>
       </div>
       <div className=" grid grid-cols-1 gap-4 md:grid-cols-2">

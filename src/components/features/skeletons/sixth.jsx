@@ -6,12 +6,12 @@ import Image from "next/image";
 export const SkeletonSix = () => {
   return (
     <div className="p-8 overflow-hidden h-full relative flex items-start justify-center">
-      <div className="flex absolute inset-0 flex-col group-hover:-translate-y-80 transition duration-200 items-center justify-center">
+      <div className="flex absolute inset-0 flex-col group-hover:-translate-y-80 transition duration-200 items-center justify-center pt-20">
         <Container>
           <Image
-            src="/avatar.png"
+            src="/image/head1.png"
             className="h-16 w-16 rounded-md object-cover"
-            alt="avatar"
+            alt="head1"
             width="100"
             height="100"
           />
@@ -39,9 +39,9 @@ export const SkeletonSix = () => {
       <div className="flex absolute inset-0 flex-col translate-y-80 group-hover:translate-y-0 transition duration-200 items-center justify-center">
         <Container>
           <Image
-            src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
+            src="/image/head2.png"
             className="h-16 w-16 rounded-md object-cover"
-            alt="avatar"
+            alt="head2"
             width="100"
             height="100"
           />

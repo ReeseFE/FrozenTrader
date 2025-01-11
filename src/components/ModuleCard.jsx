@@ -45,7 +45,7 @@ export const ModuleCard = () => {
         variants={titleVariants}
         className="mx-auto sm:text-center pt-20"
       >
-        <Heading>Modularized Design For Easy Customization</Heading>
+        <Heading>Modularized Design & Easy Customization</Heading>
         <Subheading>
           We provide a rich set of loose-coupled modules for traditional quantitative research workflow.
         </Subheading>

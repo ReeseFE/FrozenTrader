@@ -10,6 +10,14 @@ module.exports = {
     "./src/constant/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "480px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -30,6 +38,7 @@ module.exports = {
         secondary: "#3C4048",
         tertiary: "#B2B2B2",
         quaternary: "#EAEAEA",
+        quinary: "#39C3EF",
         vulcan: {
           50: "#f4f4f4",
           100: "#e8e8e9",

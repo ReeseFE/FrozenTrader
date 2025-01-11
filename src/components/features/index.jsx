@@ -21,36 +21,32 @@ export const Features = () => {
     <Container className="py-20 w-full mx-auto relative z-40">
       <Heading className="pt-4">Platform Infrastructure</Heading>
       <Subheading>
-        Proactiv houses a rich set of features to automate your marketing
-        efforts across all social medias
+        Frozen provides a robust infrastructure to enhance and support your research endeavors.
       </Subheading>
 
-      <div className="grid grid-cols-1 lg:grid-cols-7 gap-2 py-10">
+      <div className="grid grid-cols-1 lg:grid-cols-7 gap-2 py-10 xs:px-8">
         <Card className="lg:col-span-2">
-          <CardTitle>Post to multiple platforms at once</CardTitle>
+          <CardTitle>Integrate with different data sources</CardTitle>
           <CardDescription>
-            With our AI-powered platform, you can post to multiple platforms
-            at once, saving you time and effort.
+            Support for multiple data APIs across different markets, including historical data, real-time data, and alternative data.
           </CardDescription>
           <CardSkeletonContainer>
             <SkeletonOne />
           </CardSkeletonContainer>
         </Card>
         <Card className="lg:col-span-2">
-          <CardTitle>Post to multiple platforms at once</CardTitle>
+          <CardTitle>Data dashboard for real-time monitoring</CardTitle>
           <CardDescription>
-            With our AI-powered platform, you can post to multiple platforms
-            at once, saving you time and effort.
+            Built with Grafana, you can monitor market data flow and perform data analysis in real-time.
           </CardDescription>
           <CardSkeletonContainer>
             <SkeletonTwo />
           </CardSkeletonContainer>
         </Card>
         <Card className="lg:col-span-3">
-        <CardTitle>Analytics for everything</CardTitle>
+        <CardTitle>Data storage and ETL pipeline</CardTitle>
           <CardDescription>
-            Check analytics, track your posts, and get insights into your
-            audience.
+            Multi-threaded data retrieval and workflow orchestration by Prefect to ensure data integrity and scalability.
           </CardDescription>
           <CodeSkeletonContainer className="mx-auto">
             <SkeletonThree />
@@ -62,7 +58,7 @@ export const Features = () => {
           </CardSkeletonContainer>
           <CardTitle className="pt-8">Served on Edge</CardTitle>
           <CardDescription>
-            Frozen is served on cloud to maintain perfect speed.
+            Frozen is served on cloud to maintain worldwide access.
           </CardDescription>
         </Card>
         <Card className="lg:col-span-2">
@@ -71,13 +67,13 @@ export const Features = () => {
           </CardSkeletonContainer>
           <CardTitle className="pt-8">Integrated AI</CardTitle>
           <CardDescription>
-            Frozen uses AI to help you create engaging content.
+            Frozen uses AI to help you turn innovative ideas into productivity.
           </CardDescription>
         </Card>
         <Card className="lg:col-span-2">
-          <CardTitle>Know your wealth</CardTitle>
+          <CardTitle>Track your wealth</CardTitle>
           <CardDescription>
-            Frozen uses AI to help you create engaging content.
+            Manage your account portfolio and visualize your wealth.
           </CardDescription>
           <CardSkeletonContainer>
             <SkeletonSix />
