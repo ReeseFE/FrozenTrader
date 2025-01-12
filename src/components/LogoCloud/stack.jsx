@@ -92,11 +92,11 @@ export const Stacks = () => {
     },
   ]);
   return (
-    <div className="pt-20 pb-40 h-45">
+    <div className="md:pt-20 md:pb-20 h-45">
       <p className="text-neutral-400 text-center mb-4 text-sm sm:text-base md:text-lg lg:text-xl break-words whitespace-normal w-full">
         Support integration with multiple technology stacks
       </p>
-      <div className="flex flex-wrap justify-center gap-4 max-w-7xl mx-auto relative pt-10 h-40">
+      <div className="flex flex-wrap justify-center gap-4 max-w-7xl mx-auto relative md:pt-5 h-40">
         <div className="absolute inset-0 bg-charcoal grayscale z-40 pointer-events-none [mask-image:_radial-gradient(circle,_transparent_10%,_#000000_100%)]" />
         <Marquee>
           {logos.map((logo, idx) => (

@@ -90,7 +90,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="animated-card-text-container">
+        <div className="animated-card-text-container, pl-[20px]">
           <motion.div
             key={active}
             initial={{

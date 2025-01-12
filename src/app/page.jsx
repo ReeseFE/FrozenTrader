@@ -106,25 +106,20 @@ export default function Home() {
             <WorkflowImages />
           </section>
 
-          <section className={styles.section} id='section-4'>
+          <section className={`${styles.section} flex flex-col`} id='section-4'>
             <VisualDescription />
+            <Stacks />
           </section>
 
           <section className={styles.section} id='section-5'>
-            <main className={styles.main}>
-              <Stacks />
-            </main>
-          </section>
-
-          <section className={styles.section} id='section-6'>
             <TextRevealCardPreview />
           </section>
 
-          <section className={styles.section} id='section-7'>
+          <section className={styles.section} id='section-6'>
             <MacbookScroll src={`/image/main.png`} showGradient={true} />
           </section>
 
-          <section className={styles.section} id='section-8'>
+          <section className={styles.section} id='section-7'>
             <Footer />
           </section>
         </div>

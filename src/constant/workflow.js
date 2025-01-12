@@ -19,7 +19,7 @@ const data = [
     content:
       "Retrieve latest price-volume data from a specified data source and store it in local database for seamless access and analysis.",
     srcImage:
-      "/image/config.png",
+      "/image/dataflow.png",
   },
   {
     title: "Write strategy and perform backtest",
@@ -64,7 +64,7 @@ export function WorkflowImages() {
         </Subheading>
       </div>
       <div className=" grid grid-cols-1 gap-8 md:grid-cols-2 pt-[40px] pb-[60px]">
-        <div className="space-y-6 lg:pl-[100px] xl:pl-[100px] 2xl:pl-[180px]">
+        <div className="space-y-6 lg:pl-[10px] xl:pl-[100px] 2xl:pl-[180px]">
           {data.map((item, index) => (
             <div key={item.title} className="w-full">
               <button
