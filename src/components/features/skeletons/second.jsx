@@ -29,7 +29,7 @@ export const SkeletonTwo = () => {
     >
       <div className="flex flex-col gap-4 items-center justify-center h-full relative">
         <div className="message absolute left-10 top-10 rounded-full px-4 py-2 shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)_inset]">
-          <p className="text-xs text-[ghostwhite]">+200 connections</p>
+          <p className="text-xs text-[ghostwhite]">+10 streams per sec</p>
         </div>
         <svg
           width="335"

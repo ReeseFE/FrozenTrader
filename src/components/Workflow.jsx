@@ -2,8 +2,6 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/utils/util";
 
-//TODO : Improve mobile version to display the image down the corresponding text instead of at the full bottom
-
 export function TextComponent({
   number,
   title,

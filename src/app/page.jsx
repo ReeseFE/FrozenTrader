@@ -107,11 +107,6 @@ export default function Home() {
           </section>
 
           <section className={styles.section} id='section-4'>
-            {/* <div className="flex flex-col items-center">
-                <p className={styles.subtitle}>
-                    Beautiful Visualization Toolkit
-                </p>
-            </div> */}
             <VisualDescription />
           </section>
 
@@ -126,7 +121,7 @@ export default function Home() {
           </section>
 
           <section className={styles.section} id='section-7'>
-            <MacbookScroll src={`/main.png`} showGradient={true} />
+            <MacbookScroll src={`/image/main.png`} showGradient={true} />
           </section>
 
           <section className={styles.section} id='section-8'>

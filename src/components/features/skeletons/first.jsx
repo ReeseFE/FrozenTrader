@@ -16,7 +16,7 @@ export const SkeletonOne = () => {
   return (
     <div className="p-8 overflow-hidden h-full">
       <div className="flex flex-col gap-4 items-center justify-center h-full relative">
-        <div className="flex gap-4 items-center justify-center flex-shrink-0"> d
+        <div className="flex gap-4 items-center justify-center flex-shrink-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="62"

@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import './AnimatedCard.css';
+import { Heading } from "@/components/heading";
+import { Subheading } from "@/components/subheading";
 
 export const AnimatedTestimonials = ({
   testimonials,
@@ -36,7 +38,13 @@ export const AnimatedTestimonials = ({
 
   return (
     <div className="animated-card-container">
-      <div className="animated-card-grid">
+      <div className="md:mx-auto md:text-center md:max-w-7xl xl:max-w-none md:pt-6">
+        <Heading>Beautiful Visualization Toolkit</Heading>
+        <Subheading>
+          Evaluate your trading strategy with our tailored visual analytics and customizable dashboards.
+        </Subheading>
+      </div>
+      <div className="animated-card-grid pt-[60px] pb-[60px]">
         <div>
           <div className="animated-card-image-container">
             <AnimatePresence>
