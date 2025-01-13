@@ -7,7 +7,7 @@ import { styled } from '@mui/system';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { menuData } from '@/constant/homePage';
 import VerticalToggleButtons from '@/components/VerticalToggleButtons/VerticalToggleButtons.jsx';
-import styles from '../app/page.module.css';
+import styles from '@/app/page.module.css';
 
 const BarContainer = styled(AppBar)`
     max-width: 1280px;
@@ -25,14 +25,13 @@ const BackgroundOverlay = styled('div')`
     width: 100%;
     height: 70px;
     background-color: rgba(33, 33, 33, 0.95);
-    z-index: 1000; /* 确保在其他内容之上 */
+    z-index: 1000;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    backdrop-filter: blur(5px); /* 添加模糊效果 */
+    backdrop-filter: blur(5px);
 `;
 
 const CustomPopoverContent = styled('div')(({ openMenu, menu }) => ({
     position: 'absolute',
-    padding: '10px',
     display: 'flex',
     flexDirection: 'column',
     padding: '1rem',
@@ -46,7 +45,6 @@ const CustomPopoverContent = styled('div')(({ openMenu, menu }) => ({
     boxShadow: '0 10px 10px rgba(0, 0, 0, 0.5)',
     borderRadius: '15px',
     border: '1px solid #2D2930',
-    padding: '10px',
     transition: 'opacity 0.3s',
 }));
 

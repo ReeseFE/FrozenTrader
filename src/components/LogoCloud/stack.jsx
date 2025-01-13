@@ -106,7 +106,7 @@ export const Stacks = () => {
               alt={logo.title}
               width={120}
               height={120}
-              className="xs:mx-4 md:mx-8 object-contain grayscale hover:grayscale-0 transition duration-200"
+              className="2xs:mx-6 md:mx-8 object-contain grayscale hover:grayscale-0 transition duration-200"
             />
           ))}
         </Marquee>

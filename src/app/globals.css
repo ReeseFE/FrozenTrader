@@ -35,6 +35,7 @@ body {
     background-size: 200% 300%;
     background-position: center;
     background-repeat: repeat;
+    /* overflow-x: hidden; */
 }
 
 * {
