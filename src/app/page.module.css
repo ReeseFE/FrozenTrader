@@ -240,3 +240,12 @@
     font-size: 1.5rem;
   }
 }
+
+.logo {
+  max-width: 1800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
