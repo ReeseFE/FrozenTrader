@@ -43,7 +43,7 @@ export const AnimatedTestimonials = ({
   }, [autoplay]);
 
   const randomRotateY = () => {
-    const maxRotation = isMd ? 10 : 15;
+    const maxRotation = isMd ? 10 : 17;
     return Math.floor(Math.random() * 21) - maxRotation;
   };
 

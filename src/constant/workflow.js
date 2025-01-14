@@ -63,7 +63,7 @@ export function WorkflowImages() {
           Build and deploy your own algorithmic trading strategy with only four steps.
         </Subheading>
       </div>
-      <div className=" grid grid-cols-1 gap-8 md:grid-cols-2 pt-[40px] pb-[60px] 2xs:px-[25px] md:px-0">
+      <div className=" grid grid-cols-1 gap-8 md:grid-cols-2 pt-[40px] pb-[60px] px-0">
         <div className="space-y-6 lg:pl-[10px] xl:pl-[100px] 2xl:pl-[180px]">
           {data.map((item, index) => (
             <div key={item.title} className="w-full">
