@@ -33,7 +33,9 @@ export const AnimatedTestimonials = ({
   }, [autoplay]);
 
   const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 15;
+    const isMd = window.innerWidth >= 768; // md breakpoint in Tailwind
+    const maxRotation = isMd ? 10 : 15;
+    return Math.floor(Math.random() * 21) - maxRotation;
   };
 
   return (
