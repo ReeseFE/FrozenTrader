@@ -9,6 +9,7 @@ const nextConfig = {
       config.plugins.push(
         new MonacoWebpackPlugin({
           languages: ['python'], // 只加载 Python 语言支持
+          filename: 'static/[name].worker.js', // 添加worker文件名配置
         })
       );
     }
@@ -19,6 +20,9 @@ const nextConfig = {
     };
 
     return config;
+  },
+  publicRuntimeConfig: {
+    basePath: '',
   },
 };
 

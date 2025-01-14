@@ -206,7 +206,7 @@ export const SkeletonTwo = () => {
               cy="154"
               r="9.5"
               stroke="url(#paint0_linear_1_60257)"
-              stroke-opacity="0.25"
+              strokeOpacity="0.25"
               shapeRendering="crispEdges"
             />
           </g>

@@ -12,6 +12,16 @@ export const AnimatedTestimonials = ({
   autoplay = false
 }) => {
   const [active, setActive] = useState(0);
+  const [isMd, setIsMd] = useState(false);
+
+  useEffect(() => {
+    setIsMd(window.innerWidth >= 768);
+    const handleResize = () => {
+      setIsMd(window.innerWidth >= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -33,7 +43,6 @@ export const AnimatedTestimonials = ({
   }, [autoplay]);
 
   const randomRotateY = () => {
-    const isMd = window.innerWidth >= 768; // md breakpoint in Tailwind
     const maxRotation = isMd ? 10 : 15;
     return Math.floor(Math.random() * 21) - maxRotation;
   };
