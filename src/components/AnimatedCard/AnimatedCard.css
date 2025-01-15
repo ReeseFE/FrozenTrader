@@ -41,8 +41,8 @@
 @media (max-width: 768px) {
   .animated-card-image-content {
     height: 100%;
-    width: 375px;
-    min-width: 375px;
+    width: 370px;
+    min-width: 300px;
     margin: 0 auto;
   }
 }
